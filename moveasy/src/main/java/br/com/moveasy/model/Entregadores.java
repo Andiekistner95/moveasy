@@ -7,13 +7,23 @@ public class Entregadores {
 	String sobrenome_ent;
 	String cpf;
 	Endereco endereco_ent;
+	Usuarios usuario;
 
-	public Entregadores(int cod_ent, String nome_ent, String sobrenome_ent, String cpf, Endereco endereco_ent) {
+	public Entregadores(int cod_ent, String nome_ent, String sobrenome_ent, String cpf, Endereco endereco_ent,Usuarios usuario) {
 		setCod_ent(cod_ent);
 		setNome_ent(sobrenome_ent);
 		setSobrenome_ent(sobrenome_ent);
 		setCpf(cpf);
 		setEndereco_ent(endereco_ent);
+		setUsuario(usuario);
+	}
+
+	public Usuarios getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuarios usuario) {
+		this.usuario = usuario;
 	}
 
 	public int getCod_ent() {

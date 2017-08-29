@@ -9,9 +9,10 @@ public class Empresas {
 	Endereco endereco_empresa;
 	String email;
 	String telefone;
+	Usuarios usuario;
 
 	public Empresas(int cod_empresa, String nome_fantasia, String razao_social, String cnpj, Endereco endereco_empresa,
-			String email, String telefone) {
+			String email, String telefone,Usuarios usuario) {
 		setCod_empresa(cod_empresa);
 		setNome_fantasia(nome_fantasia);
 		setRazao_social(razao_social);
@@ -19,6 +20,15 @@ public class Empresas {
 		setEndereco_empresa(endereco_empresa);
 		setEmail(email);
 		setTelefone(telefone);
+		setUsuario(usuario);
+	}
+
+	public Usuarios getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuarios usuario) {
+		this.usuario = usuario;
 	}
 
 	public int getCod_empresa() {
