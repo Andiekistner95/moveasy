@@ -68,8 +68,8 @@ public class CidadesDAO {
 				+ " COD_CIDADE, "
 				+ " NOME_CIDADE, "
 				+ " ESTADO,"
-				+ " NOME_ESTADO "
-				+ " UF, "
+				+ " NOME_ESTADO, "
+				+ " UF "
 			+ " FROM "
 				+ " CIDADES "
 			+ " INNER JOIN ESTADOS ON"
@@ -89,7 +89,7 @@ public class CidadesDAO {
 					String uf = rs.getString(5);
 					
 					dados = "Cidade: " + codigoCidade + " - " + nomeCidade;
-					dados += "\n Estado: " + codigoEstado + " - " + nomeEstado + "UF: " + uf; 
+					dados += "\n Estado: " + codigoEstado + " - " + nomeEstado + " - UF: " + uf; 
 				}
 				
 				
@@ -103,17 +103,19 @@ public class CidadesDAO {
 		List<Cidades> lCidades = new ArrayList<>();
 		
 		String sql;
-		sql = " SELECT  "
+		sql = " SELECT "
 				+ " COD_CIDADE, "
 				+ " NOME_CIDADE, "
 				+ " ESTADO,"
-				+ " NOME_ESTADO "
-				+ " UF, "
+				+ " NOME_ESTADO, "
+				+ " UF "
 			+ " FROM "
 				+ " CIDADES "
 			+ " INNER JOIN ESTADOS ON"
-				+ " COD_ESTADO = ESTADO ";
-					
+				+ " COD_ESTADO = ESTADO"
+			+ " WHERE "
+				+ " ROWNUM < 10 ";
+								
 		try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
 			stmt.execute();
 			try (ResultSet rs = stmt.getResultSet()) {
