@@ -118,6 +118,7 @@ public class EnderecoDAO {
 		return dados;
 	}
 	
+	
 	public List<Endereco> listar() throws SQLException {
 		List<Endereco> lEnderecos = new ArrayList<>();
 		

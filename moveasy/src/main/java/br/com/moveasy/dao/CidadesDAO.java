@@ -134,6 +134,7 @@ public class CidadesDAO {
 
 	}
 	
+	
 	public String deletar(Integer codigo) throws SQLException {
 		String sql = "DELETE CIDADES WHERE COD_CIDADE = ?";
 
