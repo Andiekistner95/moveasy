@@ -7,7 +7,7 @@ public class Tipo_servico {
 	double taxa;
 
 	public Tipo_servico(int cod_servico, String descricao, double taxa) {
-		setCod_servico(cod_servico);
+		setCod_servico(cod_servico);	
 		setDescricao(descricao);
 		setTaxa(taxa);
 
