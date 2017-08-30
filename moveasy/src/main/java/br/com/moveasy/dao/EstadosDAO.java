@@ -35,7 +35,8 @@ public class EstadosDAO {
 		
 		return info;
 		
-	}
+	}	
+	
 	
 	public String editar(Estados estado) throws SQLException {
 		String sql = "UPDATE ESTADOS SET NOME_ESTADO = ?, UF = ? WHERE CODIGO = ?";

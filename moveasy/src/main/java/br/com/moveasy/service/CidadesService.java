@@ -1,6 +1,13 @@
 package br.com.moveasy.service;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+import br.com.moveasy.dao.CidadesDAO;
+import br.com.moveasy.jdbc.oracle.ConnectionPoolOracle;
 import br.com.moveasy.model.Cidades;
+import br.com.moveasy.model.Estados;
 
 public class CidadesService {
 
@@ -12,19 +19,25 @@ public class CidadesService {
 	
 	public List<Cidades> listar() throws SQLException{
 		try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
-            return new CidadesDAO(conexao).lista();
+            return new CidadesDAO(conexao).listar();
 		}
 	}
 	
 	public void editar(Cidades cidades) throws SQLException{
 		try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
-			new CidadesDAO(conexao).editar(cidades.getCod_cidade());
+			new CidadesDAO(conexao).editar(cidades);
 		}
 	}
 	
 	public void deletar(Cidades cidades) throws SQLException{
 		try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
 			new CidadesDAO(conexao).deletar(cidades.getCod_cidade());
+		}
+	}
+	
+	public String imprimirDados(Cidades cidades) throws SQLException{
+		try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
+			return new CidadesDAO(conexao).imprimirDados(cidades);
 		}
 	}
 	
