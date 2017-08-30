@@ -10,9 +10,9 @@ public class CidadesService {
 		}
 	}
 	
-	public List<Empresas> listar() throws SQLException{
+	public List<Cidades> listar() throws SQLException{
 		try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
-            return new EmpresasDAO(conexao).lista();
+            return new CidadesDAO(conexao).lista();
 		}
 	}
 	
