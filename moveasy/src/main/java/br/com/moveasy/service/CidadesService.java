@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.moveasy.dao.CidadesDAO;
+import br.com.moveasy.dao.EstadosDAO;
 import br.com.moveasy.jdbc.oracle.ConnectionPoolOracle;
 import br.com.moveasy.model.Cidades;
 import br.com.moveasy.model.Estados;
@@ -20,6 +21,12 @@ public class CidadesService {
 	public List<Cidades> listar() throws SQLException{
 		try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
             return new CidadesDAO(conexao).listar();
+		}
+	}
+	
+	public Cidades listar(int codigo) throws SQLException{
+		try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
+            return new CidadesDAO(conexao).listar(codigo);
 		}
 	}
 	

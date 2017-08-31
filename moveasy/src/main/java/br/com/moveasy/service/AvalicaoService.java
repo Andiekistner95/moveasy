@@ -1,5 +1,10 @@
 package br.com.moveasy.service;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+import br.com.moveasy.jdbc.oracle.ConnectionPoolOracle;
 import br.com.moveasy.model.Estados;
 
 public class AvalicaoService {

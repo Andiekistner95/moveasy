@@ -8,8 +8,8 @@ public class TestaConexaOracle {
 	public static void main(String[] args) throws SQLException {
 		ConnectionPoolOracle database = new ConnectionPoolOracle();
 		Connection connection = database.getConnection();
-		System.out.println("Conex�o aberta!");
+		System.out.println("Conexao aberta!");
 		connection.close();
 	}
-
-}
+		
+	}
