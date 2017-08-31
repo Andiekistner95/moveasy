@@ -30,13 +30,19 @@ public class EstadosService {
 	
 	public void editar(Estados estados) throws SQLException{
 		try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
-			new EstadosDAO(conexao).editar(estados.getCod_estado());
+			new EstadosDAO(conexao).editar(estados);
 		}
 	}
 	
 	public void deletar(Estados estados) throws SQLException{
 		try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
 			new EstadosDAO(conexao).deletar(estados.getCod_estado());
+		}
+	}
+	
+	public String imprimirDados(Estados estados) throws SQLException{
+		try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
+			return new EstadosDAO(conexao).imprimirDados(estados);
 		}
 	}
 	

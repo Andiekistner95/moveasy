@@ -75,7 +75,7 @@ public class EstadosDAO {
 					String nomeEstado = rs.getString(2);
 					String ufEstado = rs.getString(3);
 					
-					dados = "Código: " + codigoEstado + "Nome: "+ nomeEstado + "UF: " + ufEstado;
+					dados = "Código: " + codigoEstado + " Nome: "+ nomeEstado + " UF: " + ufEstado;
 				}
 				
 				
@@ -104,6 +104,30 @@ public class EstadosDAO {
 		}
 
 		return lEstados;
+
+	}
+	
+	public Estados listar(int codigo) throws SQLException {
+
+		Estados estado = null;
+		String sql = "SELECT COD_ESTADO, NOME_ESTADO, UF FROM ESTADOS WHERE COD_ESTADO = ?";
+		
+		
+		try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+			stmt.setInt(1, codigo);
+			stmt.execute();
+			try (ResultSet rs = stmt.getResultSet()) {
+				while (rs.next()) {
+					int codigoEstado = rs.getInt(1);
+					String nomeEstado = rs.getString(2);
+					String uf = rs.getString(3);
+					
+					estado = new Estados(codigoEstado, nomeEstado, uf);
+				}
+			}
+		}
+
+		return estado;
 
 	}
 	

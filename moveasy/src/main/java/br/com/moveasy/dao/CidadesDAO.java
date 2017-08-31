@@ -136,6 +136,43 @@ public class CidadesDAO {
 
 	}
 	
+	public Cidades listar(int codigo) throws SQLException {
+		Cidades cidade = null;
+		
+		String sql;
+		sql = " SELECT "
+				+ " COD_CIDADE, "
+				+ " NOME_CIDADE, "
+				+ " ESTADO,"
+				+ " NOME_ESTADO, "
+				+ " UF "
+			+ " FROM "
+				+ " CIDADES "
+			+ " INNER JOIN ESTADOS ON"
+				+ " COD_ESTADO = ESTADO"
+			+ " WHERE "
+				+ " COD_CIDADE = ? ";
+								
+		try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+			stmt.setInt(1, codigo);
+			stmt.execute();
+			try (ResultSet rs = stmt.getResultSet()) {
+				while (rs.next()) {
+					int codigoCidade = rs.getInt(1);
+					String nomeCidade = rs.getString(2);
+					int codigoEstado = rs.getInt(3);
+					String nomeEstado = rs.getString(4);
+					String uf = rs.getString(5);
+					
+					cidade = new Cidades(codigoCidade, nomeCidade, new Estados(codigoEstado, nomeEstado, uf));
+				}
+			}
+		}
+
+		return cidade;
+
+	}
+	
 	
 	public String deletar(Integer codigo) throws SQLException {
 		String sql = "DELETE CIDADES WHERE COD_CIDADE = ?";

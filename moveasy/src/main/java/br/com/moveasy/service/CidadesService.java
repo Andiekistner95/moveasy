@@ -42,6 +42,12 @@ public class CidadesService {
 		}
 	}
 	
+	public void deletar(int codigo) throws SQLException{
+		try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
+			new CidadesDAO(conexao).deletar(codigo);
+		}
+	}
+	
 	public String imprimirDados(Cidades cidades) throws SQLException{
 		try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
 			return new CidadesDAO(conexao).imprimirDados(cidades);
