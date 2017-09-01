@@ -119,7 +119,7 @@ public class EnderecoDAO {
 	}
 	
 	
-	public List<Endereco> listar() throws SQLException {
+	public List<Endereco> listar(int codigo) throws SQLException {
 		List<Endereco> lEnderecos = new ArrayList<>();
 		
 		String sql;

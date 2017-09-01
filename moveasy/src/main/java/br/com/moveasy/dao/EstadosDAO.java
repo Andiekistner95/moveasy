@@ -75,7 +75,7 @@ public class EstadosDAO {
 					String nomeEstado = rs.getString(2);
 					String ufEstado = rs.getString(3);
 					
-					dados = "CÃ³digo: " + codigoEstado + " Nome: "+ nomeEstado + " UF: " + ufEstado;
+					dados = "Código: " + codigoEstado + " Nome: "+ nomeEstado + " UF: " + ufEstado;
 				}
 				
 				

@@ -9,6 +9,7 @@ import java.util.List;
 
 import br.com.moveasy.model.Cidades;
 import br.com.moveasy.model.Estados;
+import br.com.moveasy.model.Tipo_servico;
 
 public class CidadesDAO {
 	
@@ -59,7 +60,7 @@ public class CidadesDAO {
 	}
 	
 	
-	public String imprimirDados(Cidades cidade) throws SQLException {
+	public String imprimirDados(Tipo_servico tipo_servico) throws SQLException {
 		
 		String dados = "";
 		
@@ -78,7 +79,7 @@ public class CidadesDAO {
 				+ "	COD_CIDADE = ? ";
 
 		try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-			stmt.setInt(1, cidade.getCod_cidade());
+			stmt.setInt(1, tipo_servico.getCod_cidade());
 			stmt.execute();
 			try (ResultSet rs = stmt.getResultSet()) {
 				while (rs.next()) {
