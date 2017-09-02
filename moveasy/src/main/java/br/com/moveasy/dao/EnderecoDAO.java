@@ -65,32 +65,31 @@ public class EnderecoDAO {
 		return info;
 	}
 	
-	
 	public String imprimirDados(Endereco endereco) throws SQLException {
 		
 		String dados = "";
 		
 		String sql;
 		sql = " SELECT "
-				+ "COD_ENDERECO,"
-				+ "RUA,"
-				+ "NUMERO"
-				+ "COMPLEMENTO"
-				+ "BAIRRO"
-				+ "CIDADE"
-				+ "NOME_CIDADE"
-				+ "UF" 
-				    
-			+ " FROM " 
-				+ " ENDERECO "
-				    
-			+ " INNER JOIN CIDADES ON "
-				+ " COD_CIDADE = CIDADE "
-				    
-			+ " INNER JOIN ESTADOS ON "
-				+ " COD_ESTADO = ESTADO "
-			+ " WHERE "
-				+ " COD_ENDERECO = ?";
+					+ "COD_ENDERECO,"
+					+ "RUA,"
+					+ "NUMERO"
+					+ "COMPLEMENTO"
+					+ "BAIRRO"
+					+ "CIDADE"
+					+ "NOME_CIDADE"
+					+ "UF" 
+					    
+				+ " FROM " 
+					+ " ENDERECO "
+					    
+				+ " INNER JOIN CIDADES ON "
+					+ " COD_CIDADE = CIDADE "
+					    
+				+ " INNER JOIN ESTADOS ON "
+					+ " COD_ESTADO = ESTADO "
+				+ " WHERE "
+					+ " COD_ENDERECO = ?";
 
 		try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
 			stmt.setInt(1, endereco.getCod_endereco());
@@ -106,8 +105,8 @@ public class EnderecoDAO {
 					String nomeCidade = rs.getString(7);
 					String uf = rs.getString(8);
 					
-					dados = "Rua: " + rua + ", " + numero + " " + complemento;
-					dados += "\nBairro:" + bairro + " " + "Cidade: " + nomeCidade + " - " + uf;
+					dados = "\nCódigo: " + codigoEndereco + " Rua: " + rua + ", " + numero + " " + complemento;
+					dados += "\nBairro:" + bairro + " " + " Cidade: " + codigoCidade + " - "+ nomeCidade + " - " + uf;
 
 				}
 				
@@ -118,8 +117,8 @@ public class EnderecoDAO {
 		return dados;
 	}
 	
-	
-	public List<Endereco> listar(int codigo) throws SQLException {
+	public List<Endereco> listar() throws SQLException {
+
 		List<Endereco> lEnderecos = new ArrayList<>();
 		
 		String sql;
@@ -156,11 +155,12 @@ public class EnderecoDAO {
 					int codigoCidade = rs.getInt(6);
 					String nomeCidade = rs.getString(7);
 					String uf = rs.getString(8);
-					String codigoEstado = rs.getString(9);
+					int codigoEstado = rs.getInt(9);
 					String nomeEstado = rs.getString(10);
-					
-					//Endereco endereco = new Endereco(codigoEndereco, rua, numero, complemento, bairro, new Cidades(codigoCidade, nomeCidade, nomeCidade, new Estados(codigoEstado, nomeEstado, uf)));
-					//lEnderecos.add(endereco);
+					Estados estado = new Estados(codigoEstado, nomeEstado, uf);
+					Cidades cidade = new Cidades(codigoCidade, nomeCidade, estado);
+					Endereco endereco = new Endereco(codigoEndereco, rua, numero, complemento, bairro, cidade );
+					lEnderecos.add(endereco);
 				}
 			}
 		}
@@ -169,7 +169,60 @@ public class EnderecoDAO {
 
 	}
 	
-	public String deletar(Integer codigo) throws SQLException {
+	public Endereco listar(int codigo) throws SQLException {
+		Endereco endereco = null;
+		
+		String sql;
+		sql = " SELECT "
+				+ "COD_ENDERECO,"
+				+ "RUA,"
+				+ "NUMERO"
+				+ "COMPLEMENTO"
+				+ "BAIRRO"
+				+ "CIDADE"
+				+ "NOME_CIDADE"
+				+ "UF"
+				+ "COD_ESTADO"
+				+ "NOME_ESTADO" 
+				    
+			+ " FROM " 
+				+ " ENDERECO "
+				    
+			+ " INNER JOIN CIDADES ON "
+				+ " COD_CIDADE = CIDADE "
+				    
+			+ " INNER JOIN ESTADOS ON "
+				+ " COD_ESTADO = ESTADO "
+			+ " WHERE "
+				+ " COD_ESTADO = ? ";
+					
+		try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+			stmt.setInt(1, codigo);
+			stmt.execute();
+			try (ResultSet rs = stmt.getResultSet()) {
+				while (rs.next()) {
+					int codigoEndereco = rs.getInt(1);
+					String rua = rs.getString(2);
+					String numero = rs.getString(3);
+					String complemento = rs.getString(4);
+					String bairro = rs.getString(5);
+					int codigoCidade = rs.getInt(6);
+					String nomeCidade = rs.getString(7);
+					String uf = rs.getString(8);
+					int codigoEstado = rs.getInt(9);
+					String nomeEstado = rs.getString(10);
+					Estados estado = new Estados(codigoEstado, nomeEstado, uf);
+					Cidades cidade = new Cidades(codigoCidade, nomeCidade, estado);
+					endereco = new Endereco(codigoEndereco, rua, numero, complemento, bairro, cidade );
+				}
+			}
+		}
+
+		return endereco;
+
+	}
+	
+	public String deletar(int codigo) throws SQLException {
 		String sql = "DELETE CIDADES WHERE COD_CIDADE = ?";
 
 		PreparedStatement statement = conexao.prepareStatement(sql);
