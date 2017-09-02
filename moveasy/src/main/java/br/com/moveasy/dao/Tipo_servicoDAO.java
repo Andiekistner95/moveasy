@@ -30,7 +30,7 @@ public class Tipo_servicoDAO {
 		boolean inserido = statement.executeUpdate() > 0; 
 		String info;
 		if ( inserido == true ) {
-			info = "Tipo de serviço inserido com sucesso";
+			info = "Tipo de serviï¿½o inserido com sucesso";
 		} else {
 			info = "Ocorreu um erro inesperado.";
 		}
@@ -69,9 +69,9 @@ public class Tipo_servicoDAO {
 				+ " COD_SERVICO, "
 				+ " DESCRICAO, "
 				+ " TAXA"
-				+ " FROM "
+			+ " FROM "
 				+ " TIPO_SERVICO "
-				+ " WHERE"
+			+ " WHERE "
 				+ "	COD_SERVICO = ? ";
 
 		try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
@@ -82,13 +82,13 @@ public class Tipo_servicoDAO {
 					int cod_servico = rs.getInt(1);
 					String descricao = rs.getString(2);
 					double taxa = rs.getDouble(3);
-					
-					
-					dados += "Código do serviço: <" + cod_servico + "> Descrição: <" + descricao+ "> Taxa: <" + taxa+">";
+										
+					dados += "\nCÃ³digo do ServiÃ§o: " + cod_servico;
+					dados += "\nDescriÃ§Ã£o: " + descricao;
+					dados += "\nTaxa: " + taxa;
 					
 				}
-				
-				
+							
 			}
 		}
 
@@ -103,7 +103,7 @@ public class Tipo_servicoDAO {
 				+ " COD_SERVICO, "
 				+ " DESCRICAO, "
 				+ " TAXA"
-				+ " FROM "
+			+ " FROM "
 				+ " TIPO_SERVICO ";
 											
 		try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
@@ -134,7 +134,7 @@ public class Tipo_servicoDAO {
 				+ " DESCRICAO, "
 				+ " TAXA"
 				+ " FROM "
-				+ " TIPO_SERVICO "
+			+ " TIPO_SERVICO "
 				+ " WHERE "
 				+ " COD_SERVICO = ? ";
 								
