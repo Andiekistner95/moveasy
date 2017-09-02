@@ -60,7 +60,7 @@ public class CidadesDAO {
 	}
 	
 	
-	public String imprimirDados(Tipo_servico tipo_servico) throws SQLException {
+	public String imprimirDados(Cidades cidades) throws SQLException {
 		
 		String dados = "";
 		
@@ -79,7 +79,7 @@ public class CidadesDAO {
 				+ "	COD_CIDADE = ? ";
 
 		try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-			stmt.setInt(1, tipo_servico.getCod_cidade());
+			stmt.setInt(1, cidades.getCod_cidade());
 			stmt.execute();
 			try (ResultSet rs = stmt.getResultSet()) {
 				while (rs.next()) {
