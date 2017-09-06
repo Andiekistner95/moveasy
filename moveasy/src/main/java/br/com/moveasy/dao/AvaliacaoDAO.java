@@ -8,8 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.moveasy.model.Avaliacao_Ent;
+import br.com.moveasy.model.Cidades;
+import br.com.moveasy.model.Endereco;
 import br.com.moveasy.model.Entregadores;
+import br.com.moveasy.model.Estados;
 import br.com.moveasy.model.Tipo_servico;
+import br.com.moveasy.model.Usuarios;
 
 public class AvaliacaoDAO {
 
@@ -99,27 +103,50 @@ public class AvaliacaoDAO {
 			try (ResultSet rs = stmt.getResultSet())
 			{
 				while (rs.next()) {
-					int codAvaliacao = rs.getInt(1);
-					int codEntregador = rs.getInt(2);
-					int estrelas = rs.getInt(3);
+					
+					//Avaliacao
+					int cod_avaliacao = rs.getInt(1);
+					int estrelas = rs.getInt(2);
+					
+					//Entregadores
+					int codEntregador = rs.getInt(3);
 					String nomeEntregador = rs.getString(4);
 					String sobrenomeEntregador = rs.getString(5);
 					String cpf = rs.getString(6);
-					String usuario = rs.getString(7);
-					int cod_endereco = rs.getInt(8);
 					
-							+ " ENDERECO.RUA, "
-							+ " ENDERECO.COMPLEMENTO, "
-							+ " ENDERECO.BAIRRO, "
-							+ " CIDADES.COD_CIDADE, "
-							+ " CIDADES.NOME_CIDADE, "
-							+ " ESTADOS.COD_ESTADO, "
-							+ " ESTADOS.NOME_ESTADO, "
-							+ " ESTADOS.UF "
+					//Endereco
+					int cod_endereco = rs.getInt(7);
+					String rua = rs.getString(8);
+					String numero = rs.getString(9);
+					String complemento = rs.getString(10);
+					String bairro = rs.getString(11);
 					
-					Entregadores entregador = new Entregadores(codEntregador, nomeEntregador, sobrenomeEntregador, cpf, endereco, usuario );					
+					//Cidades
+					int cod_cidade = rs.getInt(12);
+					String nome_cidade = rs.getString(13);
+					
+					//Estados
+					int cod_estado = rs.getInt(14);
+					String nome_estado = rs.getString(15);
+					String uf = rs.getString(16);
+					
+					//Usuarios
+					int cod_usuario = rs.getInt(17);
+					String login = rs.getString(18);
+					String senha  = rs.getString(19);
+					int status = rs.getInt(20);
+									
+	
 					Avaliacao_Ent avaliacao_Ent = new Avaliacao_Ent(cod_avaliacao, cod_ent, estrelas);
+					Entregadores entregador = new Entregadores(codEntregador, nomeEntregador, sobrenomeEntregador, cpf, endereco_ent, usuario );					
+					Endereco endereco = new Endereco(cod_endereco, rua, numero, complemento, bairro, cidade);
+					Cidades cidades = new Cidades(cod_cidade, nome_cidade, estado);
+					Estados estados = new Estados(cod_estado, nome_estado, uf);
+					Usuarios usuarios = new Usuarios(cod_usuario, login, senha, status);
+					
+					
 					lAvaliacao_Ent.add(avaliacao_Ent);
+										
 				}
 			}
 		}
@@ -127,6 +154,37 @@ public class AvaliacaoDAO {
 		return lTipo_servico;
 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public Tipo_servico listar(int codigo) throws SQLException {
 		Tipo_servico tipo_servico = null;
