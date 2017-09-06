@@ -5,11 +5,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import br.com.moveasy.model.Cidades;
+import br.com.moveasy.model.Destinatarios;
+import br.com.moveasy.model.Empresas;
+import br.com.moveasy.model.Endereco;
+import br.com.moveasy.model.Entregadores;
 import br.com.moveasy.model.Estados;
+import br.com.moveasy.model.Pedidos;
 import br.com.moveasy.model.Tipo_servico;
+import br.com.moveasy.model.Usuarios;
 
 public class PedidosDAO {
 
@@ -95,8 +102,8 @@ public class PedidosDAO {
 		return dados;
 	}
 	
-	public List<Tipo_servico> listar() throws SQLException {
-		List<Tipo_servico> lTipo_servico = new ArrayList<>();
+	public List<Pedidos> listar() throws SQLException {
+		List<Pedidos> lPedidos = new ArrayList<>();
 		
 		String sql;
 		sql = " SELECT "
@@ -177,17 +184,134 @@ public class PedidosDAO {
 			try (ResultSet rs = stmt.getResultSet())
 			{
 				while (rs.next()) {
-					int cod_servico = rs.getInt(1);
-					String descricao = rs.getString(2);
-					double taxa = rs.getDouble(3);
 					
-					Tipo_servico tipo_servico = new Tipo_servico(cod_servico, descricao, taxa);
-					lTipo_servico.add(tipo_servico);
+					// dados do pedido
+					int codPedido = rs.getInt("pedido");
+					String descricaoPedido = rs.getString("descricao_pedido");
+					double valorTotalPedido = rs.getDouble("valor_total_pedido");
+					double taxaExtraPedido = rs.getDouble("taxa_extra_pedido");
+					Date emissaoPedido = rs.getDate("emissao_pedido");
+					
+					// dados do remetente / empresa
+					int codRemetente = rs.getInt("cod_remetente");
+					String nomeRemetente = rs.getString("nome_empresa_remetente");
+					String razaoSocialRemetente = rs.getString("razao_social_remetente");
+					String cnpjRemetente = rs.getString("cnpj_remetente");
+					String telefoneRemetente = rs.getString("telefone_remetente");
+					String emailRemetente = rs.getString("email_remetente");
+					int caixaTermicaRemetente = rs.getInt("caixa_termica_remetente");
+					int codUsuarioRemetente = rs.getInt("usuario_remetente");
+					String loginRemetente = rs.getString("login_remetente");
+					String senhaRemetente = rs.getString("senha_remetente");
+					int statusRemetente = rs.getInt("status_usuario_remetente");
+					
+					// dados do endereco
+					int codEnderecoRemetente = rs.getInt("cod_endereco_remetente");
+					String ruaRemetente = rs.getString("rua_remetente");
+					String numeroRemetente = rs.getString("numero_remetente");
+					String complementoRemetente = rs.getString("complemento_remetente");
+					String bairroRemetente = rs.getString("bairro_remetente");
+					
+					
+					// dados da cidade
+					int codCidadeRemetente = rs.getInt("cod_cidade_remetente");
+					String nomeCidadeRemetente = rs.getString("nome_cidade_remetente");
+					
+					// dados do estado
+					int codEstadoRemetente = rs.getInt("cod_estado_remetente");
+					String nomeEstadoRemetente = rs.getString("nome_estado_remetente");
+					String ufEstadoRemetente = rs.getString("uf_estado_remetente");
+
+					// Criação do endereço do remetente
+					Estados estadoRemetente = new Estados(codEstadoRemetente, nomeEstadoRemetente, ufEstadoRemetente);
+					Cidades cidadeRemetente = new Cidades(codCidadeRemetente, nomeCidadeRemetente, estadoRemetente);
+					Endereco enderecoRemetente = new Endereco(codEnderecoRemetente, ruaRemetente, numeroRemetente, complementoRemetente, bairroRemetente, cidadeRemetente);
+					Usuarios usuarioRemetente = new Usuarios(codUsuarioRemetente, loginRemetente, senhaRemetente, statusRemetente);
+					
+					// criação do remetente / empresa
+					Empresas remetente = new Empresas(codRemetente, nomeRemetente, razaoSocialRemetente, cnpjRemetente, enderecoRemetente, emailRemetente, telefoneRemetente, usuarioRemetente);
+					
+					// dados do entregador
+					int codEntregador = rs.getInt("cod_entregador");
+					String nomeEntregador = rs.getString("nome_entregador");
+					String sobrenomeEntregador = rs.getString("sobrenome_entregador");
+					String cpfEntregador = rs.getString("cpf_entregador");
+					int codUsuarioEntregador = rs.getInt("login_entregador");
+					String loginEntregador = rs.getString("login_remetente");
+					String senhaEntregador = rs.getString("senha_remetente");
+					int statusEntreagor = rs.getInt("status_usuario_remetente");
+					
+
+					// dados do endereco do entregador
+					int codEnderecoEntregador = rs.getInt("cod_endereco_entregador");
+					String ruaEntregador = rs.getString("rua_entregador");
+					String numeroEntregador = rs.getString("numero_entregador");
+					String complementoEntregador = rs.getString("complemento_entregador");
+					String bairroEntregador = rs.getString("bairro_entregador");
+					
+					
+					// dados da cidade do entregador
+					int codCidadeEntregador = rs.getInt("cod_cidade_entregador");
+					String nomeCidadeEntregador = rs.getString("nome_cidade_entregador");
+					
+					// dados do estado do entregador
+					int codEstadoEntregador = rs.getInt("cod_estado_entregador");
+					String nomeEstadoEntregador = rs.getString("nome_estado_entregador");
+					String ufEstadoEntregador = rs.getString("uf_estado_entregador");
+
+					
+					// criação endereco do entregador
+					Estados estadoEntregador = new Estados(codEstadoEntregador, nomeEstadoEntregador, ufEstadoEntregador);
+					Cidades cidadeEntregador = new Cidades(codCidadeEntregador, nomeCidadeEntregador, estadoEntregador);
+					Endereco enderecoEntregador = new Endereco(codEnderecoEntregador, ruaEntregador, numeroEntregador, complementoEntregador, bairroEntregador, cidadeRemetente);
+					Usuarios usuarioEntregador = new Usuarios(codUsuarioEntregador, loginEntregador, senhaEntregador, statusEntreagor);
+					
+					// criação do entregador
+					Entregadores entregador = new Entregadores(codEntregador, nomeEntregador, sobrenomeEntregador, cpfEntregador, enderecoEntregador, usuarioEntregador);
+					
+					// dados do destinatario
+					int codDestinatario = rs.getInt("cod_destinatario");
+					String nomeDestinatario = rs.getString("nome_desstinatario");
+					
+					// dados do endereco do destinatario
+					int codEnderecoDestinatario = rs.getInt("cod_endereco_destinatario");
+					String ruaDestinatario = rs.getString("rua_destinatario");
+					String numeroDestinatario = rs.getString("numero_destinatario");
+					String complementoDestinatario = rs.getString("complemento_destinatario");
+					String bairroDestinatario = rs.getString("bairro_destinatario");
+					
+					// dados da cidade do destinatario
+					int codCidadeDestinatario = rs.getInt("cod_cidade_destinatario");
+					String nomeCidadeDestinatario = rs.getString("nome_cidade_destinatario");
+					
+					// dados do estado do destinatario
+					int codEstadoDestinatario = rs.getInt("cod_estado_destinatrio");
+					String nomeEstadoDestinatario = rs.getString("nome_estado_destinatario");
+					String ufEstadoDestinatario = rs.getString("uf_estado_destinatario");
+					
+					// criação endereco do destinatario
+					Estados estadoDestinatario = new Estados(codEstadoDestinatario, nomeEstadoDestinatario, ufEstadoDestinatario);
+					Cidades cidadeDestinatario = new Cidades(codCidadeDestinatario, nomeCidadeDestinatario, estadoDestinatario);
+					Endereco enderecoDestinatario = new Endereco(codEnderecoDestinatario, ruaDestinatario, numeroDestinatario, complementoDestinatario, bairroDestinatario, cidadeDestinatario);
+					
+					// criação do destinatário
+					Destinatarios destinatario = new Destinatarios(codDestinatario, nomeDestinatario, enderecoDestinatario);
+					
+					// Dados do tipo de serviço
+					int codTipoServico = rs.getInt("servico");
+					String descricaoServico = rs.getString("descricao_servico");
+					double taxaServico = rs.getDouble("taxa_servico");
+					
+					// criação do tipo de serviço
+					Tipo_servico tipoServico = new Tipo_servico(codTipoServico, descricaoServico, taxaServico);
+					
+					Pedidos pedido = new Pedidos(codPedido, remetente, destinatario, tipoServico, entregador, emissaoPedido, taxaExtraPedido, valorTotalPedido, descricaoPedido);
+					lPedidos.add(pedido);
 				}
 			}
 		}
 
-		return lTipo_servico;
+		return lPedidos;
 
 	}
 	
