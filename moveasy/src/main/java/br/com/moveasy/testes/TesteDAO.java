@@ -1,15 +1,18 @@
 package br.com.moveasy.testes;
 
+import java.util.Date;
 import java.util.List;
 import java.sql.SQLException;
 
 import br.com.moveasy.model.Cidades;
 import br.com.moveasy.model.Endereco;
 import br.com.moveasy.model.Estados;
+import br.com.moveasy.model.Pedidos;
 import br.com.moveasy.model.Tipo_servico;
 import br.com.moveasy.service.CidadesService;
 import br.com.moveasy.service.EnderecoService;
 import br.com.moveasy.service.EstadosService;
+import br.com.moveasy.service.PedidosService;
 import br.com.moveasy.service.Tipo_servicoService;
 
 public class TesteDAO {
@@ -20,6 +23,8 @@ public class TesteDAO {
 		//List<Cidades> lCidades = cidadesService.listar();
 		
 		EstadosService estadosService = new EstadosService();
+		
+		EnderecoService enderecoService = new EnderecoService();
 		
 		
 		//List<Estados> lEstados = estadosService.listar();
@@ -45,8 +50,24 @@ public class TesteDAO {
 	
 		//Deletar
 	    //tipo_servicoService.deletar(5567);
+		
+		
+		PedidosService pedidosService = new PedidosService();
+		
+		//listar
+		//List<Pedidos> lPedidos = pedidosService.listar();
+		Pedidos pedido = pedidosService.listar(2);
+		
+		System.out.println("Número do pedido: " + pedido.getCod_pedido());
+		System.out.println("\n rua:"+pedido.getDestinatario().getEndereco_dest().getRua());
+		
+		//for (Pedidos pedidos : lPedidos) {
+		//	System.out.println("Número do pedido: " + pedidos.getCod_pedido());
+		//	System.out.println("\n rua:"+pedidos.getDestinatario().getEndereco_dest().getRua());
+		//}
 	    		
-	    
+	    pedidosService.cadastrar(1, 1, 1, 1, new Date(), 10, 35, "Teste de insert via java");
+		
 		}
 		
 
