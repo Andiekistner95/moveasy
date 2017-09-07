@@ -3,10 +3,14 @@ package br.com.moveasy.testes;
 import java.util.List;
 import java.sql.SQLException;
 
+import br.com.moveasy.model.Avaliacao_Ent;
 import br.com.moveasy.model.Cidades;
 import br.com.moveasy.model.Endereco;
+import br.com.moveasy.model.Entregadores;
 import br.com.moveasy.model.Estados;
 import br.com.moveasy.model.Tipo_servico;
+import br.com.moveasy.model.Usuarios;
+import br.com.moveasy.service.AvaliacaoService;
 import br.com.moveasy.service.CidadesService;
 import br.com.moveasy.service.EnderecoService;
 import br.com.moveasy.service.EstadosService;
@@ -19,7 +23,7 @@ public class TesteDAO {
 		//CidadesService cidadesService = new CidadesService();
 		//List<Cidades> lCidades = cidadesService.listar();
 		
-		EstadosService estadosService = new EstadosService();
+		//EstadosService estadosService = new EstadosService();
 		
 		
 		//List<Estados> lEstados = estadosService.listar();
@@ -34,7 +38,7 @@ public class TesteDAO {
 		//cidadesService.cadastrar("TESTE_CIDADE", estado);
 		//cidadesService.deletar(5446);
 		
-		Tipo_servicoService tipo_servicoService = new Tipo_servicoService();
+		//Tipo_servicoService tipo_servicoService = new Tipo_servicoService();
 		
 		//Inserindo
 		//tipo_servicoService.cadastrar("Teste", 30d);
@@ -45,9 +49,21 @@ public class TesteDAO {
 	
 		//Deletar
 	    //tipo_servicoService.deletar(5567);
-	    		
-	    
-		}
+	   		
+		//Teste Avaliação
+		AvaliacaoService avaliacaoService = new AvaliacaoService();
+	 	//avaliacaoService.cadastrar(1, 5);		
+		
+	 		 	
+		//Listar
+		//AvaliacaoService avaliacao_Ent = (AvaliacaoService) avaliacaoService.listar();
+		//System.out.println(avaliacaoService.imprimirDados(23));
+		
+		System.out.println(avaliacaoService.imprimirDados(23));
+	
+	
+	
+	}
 		
 
 
