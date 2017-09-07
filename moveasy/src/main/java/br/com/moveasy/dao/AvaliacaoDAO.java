@@ -68,7 +68,7 @@ public class AvaliacaoDAO {
 				+ " USUARIOS.COD_USUARIO, "
 				+ " USUARIOS.LOGIN, "
 				+ " USUARIOS.SENHA, "
-				+ " USUARIOS.STATUS, "
+				+ " USUARIOS.STATUS "
 				+ " FROM "
 				+ " AVALIACAO_ENT AVALIACAO"
 			+ " INNER JOIN ENTREGADORES ON "
@@ -156,7 +156,7 @@ public class AvaliacaoDAO {
 				+ " USUARIOS.COD_USUARIO, "
 				+ " USUARIOS.LOGIN, "
 				+ " USUARIOS.SENHA, "
-				+ " USUARIOS.STATUS, "
+				+ " USUARIOS.STATUS "
 				+ " FROM "
 				+ " AVALIACAO_ENT AVALIACAO"
 			+ " INNER JOIN ENTREGADORES ON "
@@ -253,7 +253,7 @@ public class AvaliacaoDAO {
 				+ " USUARIOS.COD_USUARIO, "
 				+ " USUARIOS.LOGIN, "
 				+ " USUARIOS.SENHA, "
-				+ " USUARIOS.STATUS, "
+				+ " USUARIOS.STATUS "
 				+ " FROM "
 				+ " AVALIACAO_ENT AVALIACAO"
 			+ " INNER JOIN ENTREGADORES ON "
@@ -313,7 +313,7 @@ public class AvaliacaoDAO {
 					Endereco endereco = new Endereco(cod_endereco, rua, numero, complemento, bairro, cidade);
 					Usuarios usuarios = new Usuarios(cod_usuario, login, senha, status);
 					Entregadores entregador = new Entregadores(codEntregador, nomeEntregador, sobrenomeEntregador, cpf, endereco, usuarios );
-					Avaliacao_Ent avaliacao_Ent2 = new Avaliacao_Ent(cod_avaliacao, entregador, estrelas);
+					avaliacao_Ent = new Avaliacao_Ent(cod_avaliacao, entregador, estrelas);
 					
 				}
 			}

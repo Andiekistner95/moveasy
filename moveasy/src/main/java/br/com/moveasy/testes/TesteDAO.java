@@ -51,15 +51,15 @@ public class TesteDAO {
 	    //tipo_servicoService.deletar(5567);
 	   		
 		//Teste Avaliação
-		AvaliacaoService avaliacaoService = new AvaliacaoService();
+		//AvaliacaoService avaliacaoService = new AvaliacaoService();
 	 	//avaliacaoService.cadastrar(1, 5);		
 		
 	 		 	
 		//Listar
-		//AvaliacaoService avaliacao_Ent = (AvaliacaoService) avaliacaoService.listar();
-		//System.out.println(avaliacaoService.imprimirDados(23));
+		//Avaliacao_Ent avaliacao_Ent =  avaliacaoService.listar(2);
+		//System.out.println(avaliacaoService.listar(23).getCod_avaliacao());
 		
-		System.out.println(avaliacaoService.imprimirDados(23));
+		//System.out.println(avaliacaoService.imprimirDados(23));
 	
 	
 	
