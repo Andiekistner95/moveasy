@@ -55,19 +55,19 @@ public class TesteDAO {
 		PedidosService pedidosService = new PedidosService();
 		
 		//listar
-		//List<Pedidos> lPedidos = pedidosService.listar();
+		List<Pedidos> lPedidos = pedidosService.listar();
 		Pedidos pedido = pedidosService.listar(2);
 		
 		System.out.println("Número do pedido: " + pedido.getCod_pedido());
 		System.out.println("\n rua:"+pedido.getDestinatario().getEndereco_dest().getRua());
 		
-		//for (Pedidos pedidos : lPedidos) {
-		//	System.out.println("Número do pedido: " + pedidos.getCod_pedido());
-		//	System.out.println("\n rua:"+pedidos.getDestinatario().getEndereco_dest().getRua());
-		//}
+		for (Pedidos pedidos : lPedidos) {
+			System.out.println(pedidosService.imprimirDados(pedidos.getCod_pedido()));
+		}
 	    		
-	    pedidosService.cadastrar(1, 1, 1, 1, new Date(), 10, 35, "Teste de insert via java");
+	   // pedidosService.cadastrar(1, 1, 1, 1, new Date(), 10, 35, "Teste de insert via java");
 		
+	   
 		}
 		
 
