@@ -33,6 +33,12 @@ public class PedidosService {
 			}
 		}
 		
+		public String imprimirDados(int codigo) throws SQLException{
+			try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
+	            return new PedidosDAO(conexao).imprimirDados(codigo);
+			}
+		}
+		
 		public void editar(int codPedido) throws SQLException{
 			try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
 				//new PedidosDAO(conexao).editar(codPedido);

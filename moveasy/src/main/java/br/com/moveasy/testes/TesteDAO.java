@@ -67,8 +67,10 @@ public class TesteDAO {
 		//	System.out.println("NÃºmero do pedido: " + pedidos.getCod_pedido());
 		//	System.out.println("\n rua:"+pedidos.getDestinatario().getEndereco_dest().getRua());
 		//}
+	    		
+	    pedidosService.cadastrar(1, 1, 1, 1, new Date(), 10, 35, "Teste de insert via java");
 	   		
-		//Teste Avaliação
+		//Teste Avaliaï¿½ï¿½o
 		//AvaliacaoService avaliacaoService = new AvaliacaoService();
 	 	//avaliacaoService.cadastrar(1, 5);		
 		//pedidosService.cadastrar(1, 1, 1, 1, new Date(), 10, 35, "Teste de insert via java");

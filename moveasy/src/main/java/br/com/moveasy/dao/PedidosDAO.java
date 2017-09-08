@@ -56,6 +56,9 @@ public class PedidosDAO {
 		
 	}
 	
+	/*
+	 * ARRUMAR ISSO AQUI, FALTA DEFINIR COMO FAZER A PARTE DE EDIÇÃO
+	 * */
 	public String editar(Tipo_servico tipo_servico) throws SQLException {
 		String sql = "UPDATE TIPO_SERVICO SET DESCRICAO = ?, TAXA = ?,  WHERE COD_SERVICO = ?";
 
@@ -77,7 +80,6 @@ public class PedidosDAO {
 	}
 	
 	
-	// falta terminar a string de saída
 	public String imprimirDados(int codPedido) throws SQLException {
 		String dados = "";
 		
@@ -328,10 +330,18 @@ public class PedidosDAO {
 					double taxaServico = rs.getDouble("taxa_servico");
 					
 					// criação do tipo de serviço
-					Tipo_servico tipoServico = new Tipo_servico(codTipoServico, descricaoServico, taxaServico);
+					Tipo_servico tipoServico = new Tipo_servico(codTipoServico, descricaoServico, taxaServico);				
 					
-					
-					dados = "";
+					dados = "\n Pedido: " + codPedido + " Emissão: " + emissaoPedido;
+					dados += "\n Tipo de serviço: " + codTipoServico + " - " + descricaoServico;
+					dados += "\n Taxa de serviço: R$" + taxaServico + " Taxa extra: R$" + taxaExtraPedido + " Valor Total R$: " + valorTotalPedido;
+					dados += "\n Descrição: " + descricaoPedido;
+					dados += "\n Remetente: " + codRemetente + " - " + nomeRemetente;
+					dados += "\n Endereço: " + ruaRemetente + ", " + numeroRemetente + " Bairro: " + bairroRemetente + " Cidade: " + nomeCidadeRemetente + " - " + ufEstadoRemetente;
+					dados += "\n Destinatário: " + codDestinatario + " - " + nomeDestinatario;
+					dados += "\n Endereço: " + ruaDestinatario + ", " + numeroDestinatario + " Bairro: " + bairroDestinatario + " Cidade: " + nomeCidadeDestinatario + " - " + ufEstadoDestinatario;
+					dados += "\n Entregador: " + codEntregador + " - " + nomeEntregador;
+										
 					
 				}
 							
