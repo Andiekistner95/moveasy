@@ -16,6 +16,7 @@ import br.com.moveasy.service.EntregadoresService;
 import br.com.moveasy.service.EstadosService;
 import br.com.moveasy.service.PedidosService;
 import br.com.moveasy.service.Tipo_servicoService;
+import br.com.moveasy.service.UsuariosService;
 
 public class TesteDAO {
 
@@ -24,9 +25,9 @@ public class TesteDAO {
 		//CidadesService cidadesService = new CidadesService();
 		//List<Cidades> lCidades = cidadesService.listar();
 		
-		EstadosService estadosService = new EstadosService();
+		//EstadosService estadosService = new EstadosService();
 		
-		EnderecoService enderecoService = new EnderecoService();
+		//EnderecoService enderecoService = new EnderecoService();
 		
 		
 		//List<Estados> lEstados = estadosService.listar();
@@ -41,7 +42,7 @@ public class TesteDAO {
 		//cidadesService.cadastrar("TESTE_CIDADE", estado);
 		//cidadesService.deletar(5446);
 		
-		Tipo_servicoService tipo_servicoService = new Tipo_servicoService();
+		//Tipo_servicoService tipo_servicoService = new Tipo_servicoService();
 		
 		//Inserindo
 		//tipo_servicoService.cadastrar("Teste", 30d);
@@ -68,7 +69,7 @@ public class TesteDAO {
 		//	System.out.println("\n rua:"+pedidos.getDestinatario().getEndereco_dest().getRua());
 		//}
 	    		
-	    pedidosService.cadastrar(1, 1, 1, 1, new Date(), 10, 35, "Teste de insert via java");
+	    //pedidosService.cadastrar(1, 1, 1, 1, new Date(), 10, 35, "Teste de insert via java");
 	   		
 		//Teste Avalia��o
 		//AvaliacaoService avaliacaoService = new AvaliacaoService();
@@ -87,6 +88,8 @@ public class TesteDAO {
 		//EntregadoresService entregadoresService = new EntregadoresService();
 				//System.out.println(entregadoresService.listar().size() );
 		
+		UsuariosService usuariosService = new UsuariosService();
+		System.out.println(usuariosService.listar().size() );
 		
 		
 	
