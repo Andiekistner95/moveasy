@@ -58,12 +58,9 @@ public class CidadesDAO {
 		return info;
 	}
 	
-<<<<<<< HEAD
+
 	
 	public String imprimirDados(Cidades cidades) throws SQLException {
-=======
-	public String imprimirDados(Cidades cidade) throws SQLException {
->>>>>>> branch 'master' of https://github.com/Andiekistner95/moveasy.git
 		
 		String dados = "";
 		
@@ -82,12 +79,10 @@ public class CidadesDAO {
 				+ "	COD_CIDADE = ? ";
 
 		try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-<<<<<<< HEAD
+
 			stmt.setInt(1, cidades.getCod_cidade());
-=======
-			stmt.setInt(1, cidade.getCod_cidade());
->>>>>>> branch 'master' of https://github.com/Andiekistner95/moveasy.git
-			stmt.execute();
+
+				stmt.execute();
 			try (ResultSet rs = stmt.getResultSet()) {
 				while (rs.next()) {
 					int codigoCidade = rs.getInt(1);

@@ -11,6 +11,8 @@ import br.com.moveasy.model.Estados;
 import br.com.moveasy.model.Pedidos;
 import br.com.moveasy.model.Tipo_servico;
 import br.com.moveasy.service.CidadesService;
+import br.com.moveasy.service.DestinatariosService;
+import br.com.moveasy.service.EmpresasService;
 import br.com.moveasy.service.EnderecoService;
 import br.com.moveasy.service.EntregadoresService;
 import br.com.moveasy.service.EstadosService;
@@ -88,8 +90,10 @@ public class TesteDAO {
 		//EntregadoresService entregadoresService = new EntregadoresService();
 				//System.out.println(entregadoresService.listar().size() );
 		
-		UsuariosService usuariosService = new UsuariosService();
-		System.out.println(usuariosService.listar().size() );
+		EmpresasService empresasService = new EmpresasService();
+		//System.out.println(empresasService.listar().size());
+		
+		System.out.println(empresasService.imprimirDados(1));
 		
 		
 	
