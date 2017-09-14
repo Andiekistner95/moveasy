@@ -45,13 +45,13 @@ public class PedidosService {
 			}
 		}
 		
-		public void deletar(Pedidos pedidos) throws SQLException{
+		public void deletar(int codPedido) throws SQLException{
 			try (Connection conexao = new ConnectionPoolOracle().getConnection()) {
-				new PedidosDAO(conexao).deletar(pedidos.getCod_pedido());
+				new PedidosDAO(conexao).deletar(codPedido);
 			}
 		}
 
-		
+				
 		
 	}
 

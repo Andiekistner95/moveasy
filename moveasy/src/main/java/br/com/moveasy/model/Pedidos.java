@@ -27,6 +27,7 @@ public class Pedidos {
 		setDescricao(descricao);
 	}
 
+	
 	public int getCod_pedido() {
 		return cod_pedido;
 	}

@@ -10,105 +10,133 @@ import br.com.moveasy.model.Tipo_servico;
 
 public class PedidosDTO {
 
-	int cod_pedido;
-	Empresas empresa;
-	Destinatarios destinatario;
-	Tipo_servico tipo_servico;
-	Entregadores entregador;
+	int codPedido;
+	int codEmpresa;
+	int codDestinatario;
+	int codTipoServico;
+	int codEntregadores;
 	Date data;
 	double taxa_extra;
 	double valor_total;
 	String descricao;
-
-	public PedidosDTO(int cod_pedido, Empresas empresa, Destinatarios destinatario, Tipo_servico tipo_servico,
-			Entregadores entregador, Date data, double taxa_extra, double valor_total, String descricao) {
-		setCod_pedido(cod_pedido);
-		setEmpresa(empresa);
-		setDestinatario(destinatario);
-		setTipo_servico(tipo_servico);
-		setEntregador(entregador);
-		setData(data);
-		setTaxa_extra(taxa_extra);
-		setValor_total(valor_total);
-		setDescricao(descricao);
+	
+	
+	public PedidosDTO(int codEmpresa, int codDestinatario, int codTipoServico, int codEntregadores, Date data, double taxa_extra, double valor_total, String descricao) {
+		this.codEmpresa = codEmpresa;
+		this.codDestinatario = codDestinatario;
+		this.codTipoServico = codTipoServico;
+		this.data = data;
+		this.taxa_extra = taxa_extra;
+		this.descricao = descricao;
+		
+	}
+	
+	public int getCodPedido() {
+		return codPedido;
 	}
 
-	public int getCod_pedido() {
-		return cod_pedido;
+
+	public void setCodPedido(int codPedido) {
+		this.codPedido = codPedido;
 	}
 
-	public void setCod_pedido(int cod_pedido) {
-		this.cod_pedido = cod_pedido;
+
+	public int getCodEmpresa() {
+		return codEmpresa;
 	}
 
-	public Empresas getEmpresa() {
-		return empresa;
+
+
+	public void setCodEmpresa(int codEmpresa) {
+		this.codEmpresa = codEmpresa;
 	}
 
-	public void setEmpresa(Empresas empresa) {
-		this.empresa = empresa;
+
+
+	public int getCodDestinatario() {
+		return codDestinatario;
 	}
 
-	public Destinatarios getDestinatario() {
-		return destinatario;
+
+
+	public void setCodDestinatario(int codDestinatario) {
+		this.codDestinatario = codDestinatario;
 	}
 
-	public void setDestinatario(Destinatarios destinatario) {
-		this.destinatario = destinatario;
+
+
+	public int getCodTipoServico() {
+		return codTipoServico;
 	}
 
-	public Tipo_servico getTipo_servico() {
-		return tipo_servico;
+
+
+	public void setCodTipoServico(int codTipoServico) {
+		this.codTipoServico = codTipoServico;
 	}
 
-	public void setTipo_servico(Tipo_servico tipo_servico) {
-		this.tipo_servico = tipo_servico;
+
+
+	public int getCodEntregadores() {
+		return codEntregadores;
 	}
 
-	public Entregadores getEntregador() {
-		return entregador;
+
+
+	public void setCodEntregadores(int codEntregadores) {
+		this.codEntregadores = codEntregadores;
 	}
 
-	public void setEntregador(Entregadores entregador) {
-		this.entregador = entregador;
-	}
+
 
 	public Date getData() {
 		return data;
 	}
 
+
+
 	public void setData(Date data) {
 		this.data = data;
 	}
+
+
 
 	public double getTaxa_extra() {
 		return taxa_extra;
 	}
 
+
+
 	public void setTaxa_extra(double taxa_extra) {
 		this.taxa_extra = taxa_extra;
 	}
+
+
 
 	public double getValor_total() {
 		return valor_total;
 	}
 
+
+
 	public void setValor_total(double valor_total) {
 		this.valor_total = valor_total;
 	}
+
+
 
 	public String getDescricao() {
 		return descricao;
 	}
 
+
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	public Pedidos toPedidos() {
-		return new Pedidos(this.cod_pedido, this.empresa, this.destinatario, this.tipo_servico,
-				this.entregador, this.data, this.taxa_extra, this.valor_total, this.descricao);
-	}
+
+
+
 
 	
 }

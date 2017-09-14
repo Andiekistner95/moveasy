@@ -15,40 +15,44 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import br.com.moveasy.dto.CadastroEmpresaDTO;
 import br.com.moveasy.dto.PedidosDTO;
-import br.com.moveasy.model.Pedidos;
+import br.com.moveasy.model.Empresas;
+import br.com.moveasy.service.EmpresasService;
 import br.com.moveasy.service.PedidosService;
+import br.com.moveasy.service.UsuariosService;
 
-
-@Path("pedidos")
-public class pedidosController {
+@Path("empresa")
+public class CadastroEmpresaController {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<Pedidos> listPedidos() {
-		PedidosService pedidosService = new PedidosService();
+	public List<Empresas> listCadastroEmpresaDTO() {
+		EmpresasService empresasService = new EmpresasService();
+		UsuariosService usuariosService = new UsuariosService();
 		try {
-			return pedidosService.listar();
+		
+			return empresasService.listar();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();
 		}
 	}
-	
+
 	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/")
-	public Response create(PedidosDTO pedidos) {
-		PedidosService pedidosService = new PedidosService();
-		try {
-			pedidosService.cadastrar(pedidos.getCodEmpresa(), pedidos.getCodDestinatario(), pedidos.getCodTipoServico(), pedidos.getCodEntregadores(), pedidos.getData(), pedidos.getTaxa_extra(), pedidos.getValor_total(), pedidos.getDescricao());
-			return Response.status(Response.Status.OK).build();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+		@Consumes(MediaType.APPLICATION_JSON)
+		@Path("/")
+		public Response create(CadastroEmpresaDTO empresa) {
+			EmpresasService empresasService = new EmpresasService();
+			try {
+				pedidosService.cadastrar
+				return Response.status(Response.Status.OK).build();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+			}
 		}
-	}
 
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -76,5 +80,5 @@ public class pedidosController {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
 	}
-	
+
 }
