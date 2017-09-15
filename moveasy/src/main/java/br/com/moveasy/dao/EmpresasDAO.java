@@ -180,7 +180,7 @@ public class EmpresasDAO {
 					String senha  = rs.getString(19);
 					int status = rs.getInt(20);
 										
-					dados += "Código da Empresa: " + cod_empresa;
+					dados += "CÃ³digo da Empresa: " + cod_empresa;
 					dados += "Nome fantasia da Empresa: " + nome_fantasia;
 					dados += "Razao social do Empresa: " + razao_social;
 					dados += "CNPJ do Empresa: " + cnpj;

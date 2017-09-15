@@ -31,8 +31,8 @@ public class CadastroEmpresaController {
 	public List<Empresas> listCadastroEmpresaDTO() {
 		EmpresasService empresasService = new EmpresasService();
 		UsuariosService usuariosService = new UsuariosService();
-		try {
-		
+		try { 
+			usuariosService.listar();
 			return empresasService.listar();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -44,9 +44,11 @@ public class CadastroEmpresaController {
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Path("/")
 		public Response create(CadastroEmpresaDTO empresa) {
-			EmpresasService empresasService = new EmpresasService();
+		UsuariosService usuariosService = new UsuariosService();	
+		EmpresasService empresasService = new EmpresasService();
 			try {
-				pedidosService.cadastrar
+				usuariosService.cadastrar(empresa.getCod_usuario(), empresa.getLogin(), empresa.getSenha(), empresa.getStatus());
+				empresasService.cadastrar(empresa.getCod_empresa(), empresa.getNome_fantasia(), empresa.getRazao_social(), empresa.getCnpj(), empresa.getCod_empresa(), empresa.getEmail(), empresa.getTelefone(), empresa.getCod_usuario());
 				return Response.status(Response.Status.OK).build();
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -57,10 +59,14 @@ public class CadastroEmpresaController {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response update(PedidosDTO pedidos) {
-		PedidosService pedidosService = new PedidosService();
+	public Response update(CadastroEmpresaDTO empresa) {
+		UsuariosService usuariosService = new UsuariosService();	
+		EmpresasService empresasService = new EmpresasService();
+		
 		try {
-			pedidosService.editar(pedidos.getCodPedido());
+			usuariosService.editar(empresa.getCod_usuario());
+			empresasService.editar(empresa.getCod_empresa());
+			
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -70,10 +76,13 @@ public class CadastroEmpresaController {
 
 	@DELETE
 	@Path("{codigo}/")
-	public Response delete(@PathParam("codigo") int codPedido) {
-		PedidosService pedidosService = new PedidosService();
+	public Response delete(@PathParam("codigo") int codEmpresa) {
+		UsuariosService usuariosService = new UsuariosService();	
+		EmpresasService empresasService = new EmpresasService();
 		try {
-			pedidosService.deletar(codPedido);
+			usuariosService.editar(codEmpresa);
+			empresasService.editar(codEmpresa);
+			
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();

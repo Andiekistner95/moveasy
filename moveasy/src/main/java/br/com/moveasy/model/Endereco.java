@@ -18,6 +18,11 @@ public class Endereco {
 		setCidade(cidade);
 	}
 
+
+	public Endereco() {
+		
+	}
+	
 	public int getCod_endereco() {
 		return cod_endereco;
 	}

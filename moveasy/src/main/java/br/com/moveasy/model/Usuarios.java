@@ -14,6 +14,13 @@ public class Usuarios {
 		setStatus(status);
 
 	}
+	
+	public Usuarios(String login, String senha) {
+		setCod_usuario(cod_usuario);
+		setLogin(login);
+		setSenha(senha);
+	
+	}
 
 	public int getCod_usuario() {
 		return cod_usuario;

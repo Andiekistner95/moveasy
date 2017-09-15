@@ -12,6 +12,11 @@ public class Estados {
 		setUf(uf);
 	}
 
+	public Estados() {
+		
+	}
+	
+	
 	public int getCod_estado() {
 		return cod_estado;
 	}

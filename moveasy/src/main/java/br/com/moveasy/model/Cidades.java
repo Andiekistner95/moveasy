@@ -12,6 +12,10 @@ public class Cidades {
 		setEstado(estado);
 	}
 
+	public Cidades() {
+		
+	}
+	
 	public int getCod_cidade() {
 		return cod_cidade;
 	}

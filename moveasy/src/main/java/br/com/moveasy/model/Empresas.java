@@ -23,6 +23,10 @@ public class Empresas {
 		setUsuario(usuario);
 	}
 
+	public Empresas() {
+		
+	}
+	
 	public Usuarios getUsuario() {
 		return usuario;
 	}
