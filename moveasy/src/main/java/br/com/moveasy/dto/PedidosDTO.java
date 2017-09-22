@@ -1,4 +1,4 @@
-package br.com.moveasy.dto;
+	package br.com.moveasy.dto;
 
 import java.util.Date;
 

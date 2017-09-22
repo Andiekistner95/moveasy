@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta lang="pt">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovEasy</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css"> 
+    <link rel="stylesheet" href="css/fixed-header.css"> <!-- you can place that css code here in a new fixed-header.css or else -->
+    <link rel="stylesheet" href="css/aos.css"> <!-- thats important for animation effekcts -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="css/menu.css"> <!-- if you use the same structur you didn't need to chance here anything -->
+    <link rel="stylesheet" href="css/panel.css"> 
+</head>
+
+<body background="imagens/Design.png" style="background-size: 100%">
+
+    <div class="container">
+
+        <form class="form-inline">
+            <font color="white">
+                <div class="row">
+                    <h4>Inclusão de Pedido</h4>
+                    <hr/>
+                    <br/>       
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <div class="panel panel-info">
+                          <div class="panel-heading">
+                            <h3 class="panel-title">Observaçãoes Gerais</h3>
+                          </div>
+                          <div class="panel-body" style="color:black;">
+                            
+                            <ul>
+                                <li>Utilize o campo descrição para informar detalhes sobre seu pedido como por exemplo: 
+                                    <ul>
+                                        <li>Material que será transportado.</li>
+                                        <li>Medidas material</li>
+                                        <li>Cuidados especiais</li>
+                                        <li>Ponto de referência para localização</li>
+                                    </ul>
+                                </li>
+                                <li>Caso sua entrega necessite de algum compartimento especial, como por exemplo: caixa térmica ou baú, informe na descrição do pedido.</li>
+                                <li>Lembre-se, exceto em serviços bancários, o entregador <strong>não retornará</strong> ao estabelecimento após realizar a entrega, portanto, é importante que pagamento dos produtos já esteja feito. O entregador apenas realizará o transporte.</li>
+
+                            </ul>
+
+                          </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="row">
+                            <h4>Detalhes do Pedido</h4>
+                            <hr>
+                            <br>
+
+                        </div>
+                        
+                        <div class="row">
+
+                            <div class="input-group">
+                                <span class="input-group-addon"><strong>Descrição</strong></span>  
+                                <textarea name="descricaoPedido" id="descricaoPedido" class="form-control" cols="70" rows="3"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <br>
+                            
+                            <div class="col-md-6">
+                                
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><strong>Tipo de Serviço</strong></span>
+                                            <select name="slTipo" id="slTipo"  class="selectpicker form-control select-MovEasy" data-live-search="true" title="Selecione...">
+                                                <option value="1">1 - Alimentício</option>
+                                                <option value="2">2 - Bancário</option>
+                                                <option value="3">3 - Geral</option>
+                                            </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            
+                            <br>
+
+                            <h4>Endereço para entrega: </h4>
+                            <hr/>
+                            <br/>
+
+                        </div>
+
+                        <div class="row">
+                        
+                            <div class="col-md-12">       
+
+                                <div class="col-xs-8">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><strong>Rua</strong></span>
+                                        <input type="text" name="rua" id="rua" class="form-control" >
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><strong>Numero</strong></span>
+                                        <input type="text" name="numero" id="numero" class="form-control" >
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            
+                            <br>
+
+                            <div class="col-md-12">
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><strong>Complemento</strong></span>
+                                        <input type="text" name="complemento" id="complemento" class="form-control" >
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><strong>Bairro</strong></span>
+                                        <input type="text" name="bairro" id="bairro" class="form-control" >
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            
+                            <br>
+
+                            <div class="col-md-12">
+
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><strong>Cidade</strong></span>
+                                        <select name="slCidade" id="slCidade" class="selectpicker form-control" data-live-search="true" title="Selecione...">
+                                            <option value="1">1 - Blumenau</option>
+                                            <option value="2">2 - Indaial</option>
+                                            <option value="3">3 - Gaspar</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><strong>Estado</strong></span>
+                                        <select name="slEstado" id="slEstado" class="selectpicker form-control" data-live-search="true" title="Selecione...">
+                                            <option value="1">1 - Santa Catarina</option>
+                                            <option value="2">2 - Rio Grande do Sul</option>
+                                            <option value="3">3 - Paraná</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <br>
+                            
+                            <div class="col-md-3"></div>
+                            
+                            <div class="col-md-3">
+                                
+                                <div class="btn-group">
+                                    <button type="submit" class="btn btn-success"><strong>Confirmar</strong></button>
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-md-3">
+
+                                <div class="btn-group">
+                                    <button class="btn btn-danger"><strong>Cancelar</strong></button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3"></div>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </font>
+        </form>
+        
+    </div>
+    
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bs-animation.js"></script> <!-- pleae make sure, you have the JS code in youre JS file for animation effects -->
+    <script src="js/aos.js"></script>
+    <script src="js/bootstrap-select.min.js"></script> <!-- Important for animation -->
+
+</body>
+</html>

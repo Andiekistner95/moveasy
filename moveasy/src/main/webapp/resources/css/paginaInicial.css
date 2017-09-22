@@ -1,0 +1,54 @@
+body {
+  height:100%;
+  width:100%;
+  background-color: #5d6668;
+
+}
+
+/*
+header {
+  background-color: black;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-attachment:fixed;
+  height:180px;
+}
+*/
+
+.btn.btn-default.btn-lg {
+  letter-spacing:1px;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color:#fafafa;
+  background-color:none;
+}
+
+.navbar-brand.navbar-link {
+  color:#fefefe;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color:black;
+  background-color:#fafafa;
+}
+
+
+li > a:hover {
+    color: black !important;
+
+}
+
+.btn-menu{
+  color: black;
+  background-color: white;
+  border-color: white;
+
+}
+
+.thumbnail {
+  border-color: black;
+  border-width: 2px;
+
+}

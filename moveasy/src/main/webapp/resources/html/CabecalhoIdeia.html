@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta lang="pt">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovEasy</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fixed-header.css"> <!-- you can place that css code here in a new fixed-header.css or else -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"> <!-- thats important for animation effekcts -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="css/menu.css"> <!-- if you use the same structur you didn't need to chance here anything -->
+</head>
+
+<body>
+    <header> <!-- I used some style code in HTML, remove it for display Bootstrap default options -->
+       <nav class="navbar navbar-default navbar-fixed-top" data-aos="fade-down" data-aos-duration="3000" style="background-image:url("none");background-color:rgba(229,76,124,0.521569);">
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#"><font size='10'>MovEasy</font></a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active" role="presentation"><a href="#" style="background-color:#fafafa;color:#303030;">Página inicial </a></li>
+                        <li role="presentation"><a href="#" style="color:#fafafa;">Sobre nós </a></li>
+                        <li role="presentation"><a href="#" style="color:#fafafa;">Cadastro</a></li>
+                        <li role="presentation"><a href="#" style="color:#fafafa;">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row" style="margin-top:190px;">
+                <div class="col-md-12" style="text-align: center;">
+                    <img src="imagens/Logo.jpg" alt="Logo" width="220" height="220" >
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="sobre_nos"> 
+        <h1 style="text-align: center;"><br>Sobre nós</h1>
+
+        <br>
+
+        <div class="row">
+
+            <div class="col-md-4">
+            </div>
+            
+            <div class="col-md-4">
+                <p style="text-align: justify;">&nbsp;&nbsp;A <strong>MovEasy</strong> surgiu ao observar redes de lanchonetes com excesso de entregadores ociosos. Trabalhando na ideia de reduzir tanto o tempo desperdiçado  para os entregadores, quanto para reduzir as despesas dos estabelecimentos vimos a necessidade de desenvolver um software para aproximar os prestadores de serviço (entregadores) e os estabelecimentos.<br><br>
+                <img src="imagens/motoboy2.jpg" alt="motoboy2" style="width: 400px; height: 400px;"><br><br>
+                &nbsp;Utilizando um sistema unificado e facilitando o encontro de ambas as partes, faremos com que os entregadores possam realizar mais serviços em diversos estabelecimentos sem ter um vínculo direto com os mesmos.<br><br>
+                <img src="imagens/motoboy1.jpg" alt="motoboy1" style="width: 400px; height: 400px;"><br><br>
+                &nbsp;&nbsp;Com a <strong>MovEasy</strong> os estabelecimentos possuirão uma despesa variável de acordo com o fluxo de pedidos, sem ter a necessidade de manter entregadores ociosos, também possibilitando que os mesmos efetuem serviços diversos durante o tempo livre.
+                </p>
+            </div>
+
+            <div class="col-md-4">
+            </div>
+            
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bs-animation.js"></script> <!-- pleae make sure, you have the JS code in youre JS file for animation effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script> <!-- Important for animation -->
+</body>
+
+</html>
