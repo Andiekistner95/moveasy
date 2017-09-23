@@ -7,10 +7,10 @@
     <meta lang="pt">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovEasy</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="css/fixed-header.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
 
 <body >
@@ -21,7 +21,7 @@
 
             <div class align="left">
                 <div class="navbar-header">
-                    <a class="navbar-brand navbar-link" href="#"><img src="imagens/logo.png" alt="Logo" width="280" height="120"></a>
+                    <a class="navbar-brand navbar-link" href="#"><img src="../imagens/logo.png" alt="Logo" width="280" height="120"></a>
                 </div>
 
                 <br>
@@ -32,7 +32,7 @@
                     <ul class="nav navbar-nav navbar-right">
 
                         <div class="btn-group btn-group-lg" role="group" aria-label="...">
-                            <button type="button" class="btn btn-default">Página inicial</button>
+                            <a href="/moveasy" class="btn btn-default">Página inicial</a>
 
                             <div class="btn-group btn-group-lg" role="group">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,10 +40,11 @@
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Empresas</a></li>
-                                    <li><a href="#">Entregadores</a></li>
+                                    <li><a href="CadastroEmpresa.html">Empresas</a></li>
+                                    <li><a href="CadastroEntregador.html">Entregadores</a></li>
                                 </ul>
                             </div>
+                            <a href="PainelEmpresa.html" class="btn btn-default">Painel</a>
 
                             <button type="button" class="btn btn-default btn-group-lg">Login</button>
 
@@ -56,16 +57,16 @@
     </div>
     <!-- Fim do cabeçalho principal -->
 
-    <style> 
+    <!--<style> 
         .fundoMV {
-            background-image: url("imagens/fundoBrancoCinza.png");
+            background-image: url("../imagens/fundoBrancoCinza.png");
          
         }
-    </style>
+    </style>-->
 
     <div class="fundoMV">
    
-        <link rel="stylesheet" href="css/cadastroEmpresa.css">
+        <link rel="stylesheet" href="../css/cadastroEmpresa.css">
         <div class="container">
 
             <!-- Formulário -->
@@ -73,7 +74,7 @@
             
                 <!-- Linha de título pedido -->
                 <div class="row">
-                    <h2>Cadastro de Empresas</h2>
+                    <h2>Cadastro de Empresa</h2>
                     <hr/>
                     <br/>       
                 </div>
@@ -86,11 +87,11 @@
                     <div class="col-md-12">
                         
                         <!-- Painel de Pedido -->
-                        <div class="panel panel-default">
+                        <div class="panel panel-info">
                             
                             <!-- cabeçalho painel -->
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Dados para cadastro</strong></h3>
+                                <h3 class="panel-title"><font color="black"><strong>Dados para cadastro</strong></font></h3>
                             </div>
                             <!-- /cabeçalho painel -->
                             
@@ -194,7 +195,7 @@
 
                                         <div class="col-xs-4">
                                             <div class="input-group inputMovEasy" >
-                                                <span class="input-group-addon"><strong>Numero</strong></span>
+                                                <span class="input-group-addon"><strong>Número</strong></span>
                                                 <input type="text" name="numero" id="numero" class="form-control" >
                                             </div>
                                         </div>
@@ -291,7 +292,7 @@
                                                             <li>Informe seu nome de usuário com pelo menos <strong>08 dígitos</strong>.</li>
                                                             <li>A senha deve ser cadastrada com pelo menos <strong>08 dígitos</strong>, sendo possível utilizar caracteres especiais.</li>
                                                             <li>Lembre-se, seu usuário será responsável por solicitar as entregas para a sua empresa. Não recomendamos o uso de senhas fracas.</li>
-                                                            <li>Caso sua entrega necessite de algum compartimento especial, como por exemplo: caixa térmica ou baú, informe na descrição do pedido.</li>
+                                                            
                                                         </ul>
 
                                                     </small>
@@ -307,7 +308,7 @@
 
                                                 <div class="input-group inputMovEasy">
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                      <input type="text" name="usuario" id="usuario" class="form-control" placeholder="usuario" minlength="8">
+                                                      <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuário" minlength="8">
                                                 </div>
 
                                             </div>
@@ -391,14 +392,14 @@
 
     </div>
 
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bs-animation.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/bootstrap-select.min.js"></script>
-    <script src="js/jquery.maskedinput.js"></script>
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bs-animation.js"></script>
+    <script src="../js/aos.js"></script>
+    <script src="../js/bootstrap-select.min.js"></script>
+    <script src="../js/jquery.maskedinput.js"></script>
 
-    <script src="js/validaCadastroEmpresa.js"></script>
+    <script src="../js/validaCadastroEmpresa.js"></script>
 
 </body>
 

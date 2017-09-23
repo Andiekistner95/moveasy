@@ -1,301 +1,226 @@
-
-<!-- Começo do cabeçalho principalaaaa -->
+<!-- Começo do cabeçalho principal -->
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta lang="pt">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MovEasy</title>
-    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="resources/css/fixed-header.css">-->
-    <link rel="stylesheet" href="resources/css/menu.css">
+  <meta charset="utf-8">
+  <meta lang="pt">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovEasy</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="css/fixed-header.css">-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"> 
+  <link rel="stylesheet" href="resources/css/menu.css"> 
 </head>
 
-<body ng-app="MovEasy">
+<body class="logo">
+  <div class="container">
 
-    <div class="container">
+    <header>
 
-        <header style="background-color: white;">
+      <div class align="left">
+        <div class="navbar-header">
+          <a class="navbar-brand navbar-link" href="#"><img src="resources/imagens/logoBranco.png" alt="Logo" width="280" height="240" ></a>
+        </div>
+        
+        <br>
+        <br>
+        <br>
+        
+        <div class="collapse navbar-collapse titulos_menu" id="navcol-1">
+          <ul class="nav navbar-nav navbar-right">
 
-            <div class align="left">
-                <div class="navbar-header">
-                    <a class="navbar-brand navbar-link" href="#"><img src="resources/imagens/logo.png" alt="Logo" width="280" height="120"></a>
-                </div>
+            <div class="btn-group btn-group-lg" role="group" aria-label="...">
+              <button type="button" class="btn btn-default">Página inicial</button>
 
-                <br>
-                <br>
-                <br>
+              <div class="btn-group btn-group-lg" role="group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Cadastro
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="resources/html/CadastroEmpresa.html">Empresas</a></li>
+                  <li><a href="resources/html/CadastroEntregador.html">Entregadores</a></li>
+                </ul>
+              </div>
 
-                <div class="collapse navbar-collapse titulos_menu" id="navcol-1">
-                    <ul class="nav navbar-nav navbar-right">
-
-                        <div class="btn-group btn-group-lg" role="group" aria-label="...">
-                            <button type="button" class="btn btn-default">Página inicial</button>
-
-                            <div class="btn-group btn-group-lg" role="group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Cadastro
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Empresas</a></li>
-                                    <li><a href="#">Entregadores</a></li>
-                                </ul>
-                            </div>
-
-                            <button type="button" class="btn btn-default btn-group-lg">Login</button>
-
-                        </div>
-                    </ul>
-                </div>
+              <button type="button" class="btn btn-default btn-group-lg">Login</button>
 
             </div>
-        </header>
-    </div>
-    <!-- Fim do cabeçalho principal -->
+          </ul>
+        </div>
 
-    <style> 
-        .fundoMV {
-            background-image: url("imagens/fundoBrancoCinza.png");
-         
-        }
-    </style>
+      </div>
+    </header>
+<!-- Fim do cabeçalho principal -->
 
-    <div class="fundoMV">
-   
-        <link rel="stylesheet" href="css/cadastroPedido.css">
-        <div class="container" data-ng-controller="PedidoController as controller">
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"> -->
+    <link rel="stylesheet" href="resources/css/paginaInicial.css">
+  
+    <br>
+    <br>
+    <br>
+    <div class="row">
 
-            <!-- Formulário -->
-            <form class="form-inline">
+
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="resources/imagens/Motoboy2.jpg" alt="motoboy2"/>
+          <div class="caption">
             
-                <!-- Linha de título pedido -->
-                <div class="row">
-                    <h2>Inclusão de Pedido</h2>
-                    <hr/>
-                    <br/>       
-                </div>
-                <!-- / Linha de título pedido -->
-                
-                <!-- Linha do pedido -->
-                <div class="row">
-                    
-                    <!-- Coluna de observações -->
-                    <div class="col-md-6">
-
-                        <div class="panel panel-info">
-                          <div class="panel-heading">
-                            <h3 class="panel-title">Observaçãoes Gerais</h3>
-                          </div>  
-                            <div class="panel-body" style="color:black;">
-                                <small>
-                                    <ul>
-                                        <li>Utilize o campo descrição para informar detalhes sobre seu pedido como por exemplo: 
-                                            <ul>
-                                                <li>Material que será transportado.</li>
-                                                <li>Medidas material</li>
-                                                <li>Cuidados especiais</li>
-                                                <li>Ponto de referência para localização</li>
-                                            </ul>
-                                        </li>
-                                        <li>Caso sua entrega necessite de algum compartimento especial, como por exemplo: caixa térmica ou baú, informe na descrição do pedido.</li>
-                                        <li>Lembre-se, exceto em serviços bancários, o entregador <strong>não retornará</strong> ao estabelecimento após realizar a entrega, portanto, é importante que pagamento dos produtos já esteja feito. O entregador apenas realizará o transporte.</li>
-
-                                    </ul>
-                                </small>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- / Coluna de observações -->
-                    
-                    <!-- Coluna de pedido -->
-                    <div class="col-md-6">
-                        
-                        <!-- Painel de Pedido -->
-                        <div class="panel panel-default">
-                            
-                            <!-- cabeçalho painel -->
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Pedido</strong></h3>
-                            </div>
-                            <!-- /cabeçalho painel -->
-                            
-                            <!-- Corpo painel -->
-                            <div class="panel-body" style="color:black;">
-                                
-                                <div class="row">
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><strong>Descrição</strong></span>  
-                                        <textarea name="descricaoPedido" id="descricaoPedido" class="form-control" cols="70" rows="3" ></textarea>
-                                    </div>
-
-                                </div>
-
-                                <div class="row">
-
-                                    <br>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><strong>Serviço</strong></span>
-                                        <select name="slTipo" id="slTipo" class="form-control" data-live-search="true">
-                                            <option value="1">Alimentício</option>
-                                            <option value="2">Bancário</option>
-                                            <option value="3">Geral</option>
-                                        </select>
-                                    </div>            
-
-                                </div>
-                                
-                                <!-- Dados de endreço entrega  -->
-                                <div class="row">
-
-                                    <br>
-
-                                    <h4>Endereço para entrega: </h4>
-                                    <hr/>
-                                    <br/>
-
-                                </div>
-
-                                <div class="row">
-
-                                    <div class="col-md-12">       
-
-                                        <div class="col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Rua</strong></span>
-                                                <input type="text" name="rua" id="rua" class="form-control" >
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xs-4">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Numero</strong></span>
-                                                <input type="text" name="numero" id="numero" class="form-control" >
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="row">
-
-                                    <br>
-
-                                    <div class="col-md-12">
-                                        <div class="col-xs-6">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Complemento</strong></span>
-                                                <input type="text" name="complemento" id="complemento" class="form-control" >
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xs-6">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Bairro</strong></span>
-                                                <input type="text" name="bairro" id="bairro" class="form-control" >
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="row">
-
-                                    <br>
-
-                                    <div class="col-md-12">
-
-                                        <div class="col-xs-6">
-
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Cidade</strong></span>
-                                                <select name="slCidade" id="slCidade" class="form-control" data-live-search="true" title="Selecione...">
-                                                    <option value="1">Blumenau</option>
-                                                    <option value="2">Indaial</option>
-                                                    <option value="3">Gaspar</option>
-                                                </select>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-xs-6">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Estado</strong></span>
-                                                <select name="slEstado" id="slEstado" class="form-control" data-live-search="true" title="Selecione...">
-                                                    <option value="1">Santa Catarina</option>
-                                                    <option value="2">Rio Grande do Sul</option>
-                                                    <option value="3">Paraná</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                                <!-- / Dados de endreço entrega  -->
-
-                            </div>
-                            <!-- / Corpo painel -->
-
-                            <!-- Rodapé painel -->
-                            <div class="panel-footer">
-
-                                <div class="row">
-
-                                    <div class="col-md-3"></div>
-
-                                    <div class="col-md-3">
-
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-success"><strong>Confirmar</strong></button>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-3">
-
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-danger"><strong>Cancelar</strong></button>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-3"></div>
-
-                                </div>  
-
-                            </div>
-                            <!-- / Rodapé painel -->
-                        </div>
-                        <!-- / Painel de Pedido -->
-
-                    </div>
-                    <!-- / Coluna de pedido -->
-
-                </div>
-                <!-- / Linha do pedido -->
+            <div class="row" align="center">
             
-            </form>
-            <!-- / Formulário -->
+              <h3>Sobre Nós</h3>
+              <hr>
+
+            </div>
+            
+            <p class="text-muted text-justify" >
+             
+                &nbsp;A <strong>MovEasy</strong> surgiu ao observar redes de lanchonetes com excesso de entregadores ociosos.<br> 
+                &nbsp;Trabalhando na ideia de reduzir tanto o tempo desperdiçado  para os entregadores, quanto para reduzir as despesas dos estabelecimentos, vimos a necessidade de desenvolver um software para aproximar os prestadores de serviço (entregadores) e os estabelecimentos.
+             
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4">
+       
+        <div class="thumbnail">
+          <img src="resources/imagens/motoboy1.jpg" alt="motoboy1">
+
+          <div class="caption">
+           
+  
+            <div class="row" align="center">
+            
+              <h3>Vantagens</h3>
+              <hr>
+
+            </div>
+
+          </div>
+
+          <div class="row" align="center">
+          
+            <p>
+              <button class="btn btn-default active" name="btnEmpresas" id="btnEmpresas">Para Emrpesas</button> <button class="btn btn-default" name="btnEntregadores" id="btnEntregadores">Para Entregadores</button>
+            </p>
+
+          </div>
+
+          <div class="caption text-left"  id="divTmbEmpresas">
+
+            <p class="tex-muted">
+
+                <ul>
+                  <li>Praticidade;</li>
+                  <li>Velocidade de atendimento;</li>
+                  <li>Comodidade;</li>
+                  <li>Despesa variável de acordo com o fluxo de pedidos;</li>
+                  <li>Não ter a necessidade de manter entregadores ociosos;</li>
+                  <li>Serviço que só atende com o pagamento online;</li>
+                  <li>O entregador só retornará ao estabelecimento em caso de serviços de origem bancária;</li>
+                  <li>Com o nosso serviço de avaliação ao atendimento, o entregador só receberá o pagamento após a avaliação ser efetuada; </li>
+                </ul> 
+
+             </p>
+
+          </div>
+
+          <div class="caption text-left"  id="divTmbEntregadores">
+
+            <p>
+
+              <ul> 
+                <li>Comodidade;</li>
+                <li>Flexibilidade de horário;</li>
+                <li>Poderá efetuar diversos serviços durante o tempo livre, proporcionando uma renda extra;</li>
+                <li>Não possuirá vínculo com as empresas;</li>
+                <li>Não necessitará retornar ao estabelecimento após efetuar a entrega(exceto em serviços de origem bancária);</li>
+                <li>Renda proporcional aos serviços prestados; </li>
+              </ul>   
+
+            </p>
+
+          </div>
+
 
         </div>
+
+
+      </div>
+
+
+      <div class="col-sm-6 col-md-4">
+       
+        <div class="thumbnail">
+          <img src="resources/imagens/servicos.png" alt="img">
+
+          <div class="caption">
+           
+  
+            <div class="row" align="center">
+            
+              <h3>Tipos de Serviço</h3>
+              <hr>
+
+            </div>
+
+          </div>
+
+          <div class="row" align="center">
+          
+            <p>
+              <button class="btn btn-default active" name="btnServicosAlimentícios" id="btnServicosAlimentícios">Alimentícios</button>
+              <button class="btn btn-default" name="btnServicosDiversos" id="btnServicosDiversos">Diversos</button>
+               <button class="btn btn-default" name="btnServicosBancarios" id="btnServicosBancarios">Bancários</button>
+               
+             </p>
+
+          </div>
+
+          <div class="caption text-left"  id="divTmbServicosDiversos">
+
+            <br>
+                <p style="text-align: center;">Serviço voltado a entrega de peças, equipamentos pequenos, entre outros produtos<br><br>
+                (ex: rolamentos, placas eletrônicas, medicamentos, linhas, etc.></p>
+
+          </div>
+
+          <div class="caption text-left"  id="divTmbServicosBancarios">
+
+            <br>
+                <p style="text-align: center;">Serviço voltado a transações bancárias <br><br>(ex: entrega de malote, pagamento de boletos, troca de cheques, entrega de documentos, ect.)</p>
+
+          </div>
+
+          <div class="caption text-left"  id="divTmbServicosAlimentícios">
+
+                <br>
+                <p style="text-align: center;">Serviço voltado a entrega de alimentos em geral<br><br>(ex: Lanches, Pizzas, marmitas, etc.)</p>   
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>      
+
+    </div>
 
     </div>
 
     <script src="resources/js/jquery-3.2.1.slim.min.js"></script>
     <script src="resources/js/bootstrap.min.js"></script>
     <script src="resources/js/bs-animation.js"></script>
-    <script src="resources/js/aos.js"></script>
-    <script src="resources/js/bootstrap-select.min.js"></script>
+    <script src="resources/js/paginaInicial.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script> -->
+  </body>
 
-</body>
-
-</html>
+  </html>

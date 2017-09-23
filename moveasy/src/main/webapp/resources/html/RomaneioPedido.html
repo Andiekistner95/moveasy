@@ -1,86 +1,211 @@
- <!DOCTYPE html>
-<html lang="pt">
+<!-- Começo do cabeçalho principal -->
+<!DOCTYPE html>
+<html>
+
 <head>
-	<meta charset="utf-8">
-	<meta lang="pt">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Romaneio</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/fixed-header.css"> <!-- you can place that css code here in a new fixed-header.css or else -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"> <!-- thats important for animation effekcts -->
-	<link rel="stylesheet" href="assets/css/styles.css">
-	<link rel="stylesheet" href="css/menu.css"> <!-- if you use the same structur you didn't need to chance here anything -->
-	<link rel="stylesheet" href="css/linhas-tabela.css">
-
+    <meta charset="utf-8">
+    <meta lang="pt">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovEasy</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="css/fixed-header.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
-<body background="imagens/Design.png " style="background-size: 100%">
 
-	<div class="container centralizar">
-		<div class="row" style="color: white">
-			<div class="col-md-3"></div>
-			<div class="col-md-6 " align="center">
+<!--<body background="imagens/fundoBrancoCinza.png" style="background-size: 190%">-->
 
-				<h4>Informações Pedido</h4>
-				<br>
-			</div>
-			<div class="col-md-3"></div>
-		</div>
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-6"><font color="black"> 
+    <div class="container">
 
-				<div class="panel panel-default">
-				<table class="table table-sm table-bordered table-striped" style="background-color: white">
-						<tr>
-							<td><strong>Pedido</strong> 21</td>
-							<td align="right"><strong>Emissão:</strong> 06/09/2017</td>
-						</tr>
+        <header style="background-color: white;">
 
-						<tr>
-							<td colspan="2"><strong>Tipo de Serviço:</strong> 1 - Alimentício: Serviço voltado á entrega de alimentos <br>(ex: Lanches, Pizzas, marmitas, etc.)</td>
-						</tr>
+            <div class align="left">
+                <div class="navbar-header">
+                    <a class="navbar-brand navbar-link" href="#"><img src="imagens/logo.png" alt="Logo" width="280" height="120"></a>
+                </div>
 
-						<tr>
-							<td colspan="2"><strong>Descrição:</strong> Teste de insert via java</td>
-						</tr>
+                <br>
+                <br>
+                <br>
 
-						<tr>
-							<td colspan="2"><strong>Remetente:</strong> 1 - Kristeen</td>
-						</tr>
+                <div class="collapse navbar-collapse titulos_menu" id="navcol-1">
+                    <ul class="nav navbar-nav navbar-right">
 
-						<tr>
-							<td colspan="2"><strong>Endereço:</strong> General Osório, 123 <br><strong>Bairro:</strong> Água Verde <br><strong>Cidade:</strong> Blumenau - SC</td>
-						</tr>
+                        <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default">Página inicial</button>
 
-						<tr>
-							<td colspan="2"><strong>Destinatário:</strong> 1 - Alison</td>
-						</tr>
+                            <div class="btn-group btn-group-lg" role="group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Cadastro
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Empresas</a></li>
+                                    <li><a href="#">Entregadores</a></li>
+                                </ul>
+                            </div>
 
-						<tr>
-							<td colspan="2"><strong>Endereço:</strong> Amazonas, 23 <br><strong>Bairro:</strong> Garcia <br><strong>Cidade:</strong> Blumenau - SC</td>
-						</tr>
+                            <button type="button" class="btn btn-default btn-group-lg">Login</button>
 
-						<tr>
-							<td colspan="2"><strong>Taxa de serviço:</strong> R$5.00<br><strong>Taxa extra:</strong> R$5.00</td>
-						</tr>
+                        </div>
+                    </ul>
+                </div>
 
-						<tr>
-							<td colspan="2" align="right"> <strong>Valor total:</strong> R$10.00</td>
-						</tr>
+            </div>
+        </header>
+    </div>
+    <!-- Fim do cabeçalho principal -->
 
-					</table>
-				</div>
-			</font>
-		</div>
-		<div class="col-md-3"></div>
+    <div class="fundoMV">
+   
+        <link rel="stylesheet" href="css/cadastroPedido.css">
+        <div class="container">
 
-	</div>
-</div>
+            <!-- Formulário -->
+            <form class="form-inline">
+            
+                <!-- Linha de título pedido -->
+                <div class="row">
+                    <h2>Romaneio de Pedido</h2>
+                    <hr/>
+                    <br/>       
+                </div>
+                <!-- / Linha de título pedido -->
+                
+                <!-- Linha do pedido -->
+                <div class="row">
+                    
+                    <!-- Coluna 1 
+                    <div class="col-md-4">
 
-<script src="js/jquery-3.2.1.slim.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bs-animation.js"></script> <!-- pleae make sure, you have the JS code in youre JS file for animation effects -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script> <!-- Important for animation -->
+                    </div>
+                    <!-- / Coluna 1 -->
+
+                    <!-- Coluna 2 -->
+                    <!-- Coluna de romaneio -->
+                    <div class="container">
+                        
+                        <div class="panel panel-default">
+                            <div class="row">
+                                
+                                <table class="table table-sm table-bordered table-striped">
+                                    
+                                    <tr>
+
+                                        <td>
+                                            <strong>Pedido: 12530</strong>
+                                        </td>
+
+                                        <td>
+                                            <strong>Emissão: 06/09/2017</strong>
+                                        </td>
+
+                                        <td>
+                                             <strong>Remetente: 1 - Kristeen</strong>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>Tipo de Serviço: </strong>
+                                        </td>
+                                        <td colspan="4">
+                                            1 - Alimentício: Serviço voltado á entrega de alimentos (ex: Lanches, Pizzas, marmitas, etc.)                                             
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td colspan="2">
+                                            <strong>Descrição: </strong>
+                                        </td>
+                                        <td colspan="4">
+                                            Material: Peças automotivas.
+                                            Material para ser coletado hoje e entregue até as 16:00.
+                                            Necssita de baú para transporte.
+                                            Peso total: Aproximadamente 10kg
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="6" align="center">
+                                            <strong>Dados para Coleta</strong>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>Endereço:</strong>
+                                        </td>
+                                        <td colspan="4">
+                                            General Osório, 123, 
+                                            Água Verde, Blumenau - SC
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <td colspan="6" align="center">
+                                            <strong>Dados para Entrega</strong>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>Destinatário:</strong>
+                                        </td>
+
+                                        <td colspan="4">
+                                            1 - Alison
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>Endereço:</strong>
+                                        </td>
+                                        <td colspan="4">
+                                            Amazonas, 23 
+                                            Garcia, Blumenau - SC
+                                        </td>
+
+                                    </tr>
+
+
+                                </table>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- / Coluna de romaneio -->
+                    <!-- / Coluna 2 -->
+
+                    <!-- Coluna 3 
+                    <div class="col-md-4">
+
+                    </div>
+                    <!-- / Coluna 3 -->
+                    
+                </div>
+                <!-- / Linha do pedido -->
+            
+            </form>
+            <!-- / Formulário -->
+
+        </div>
+
+    </div>
+
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bs-animation.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
 
 </body>
+
 </html>
