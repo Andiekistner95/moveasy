@@ -3,57 +3,53 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta lang="pt">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MovEasy</title>
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="css/fixed-header.css">-->
-    <link rel="stylesheet" href="../../css/menu.css">
+  <meta charset="utf-8">
+  <meta lang="pt">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovEasy - Painel</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/menu.css"> 
 </head>
 
-<body >
+<!--
+<body background="imagens/fundoBrancoCinza.png" style="background-size: 130%">
+-->
+<body>
 
-    <div class="container">
+  <div class="container">
 
-        <header style="background-color: white;">
+    <header >
+    
+   		<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header"> 
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#" style="margin-bottom: 15px;"><img src="../../imagens/logoBranco.png" alt="Logo" width="120" height="75" ></a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	        
+	        <div class="btn-group btn-group-sm navbar-right" role="group" aria-label="..." style="margin-top: 18px;">
+	              <a href="PedidosDisponiveis.html" class="btn btn-default">Pedidos Disponíveis</a>
+	              <a href="perfilEntregador.html" class="btn btn-default">Meu Perfil</a>
+	              <a href="" class="btn btn-default">Sair</a>
+	
+	          </div>
+	         
+	        </div><!--/.navbar-collapse -->
+	      </div>
+	    </nav>    
 
-            <div class align="left">
-                <div class="navbar-header">
-                    <a class="navbar-brand navbar-link" href="#"><img src="../../imagens/logo.png" alt="Logo" width="280" height="120"></a>
-                </div>
-
-                <br>
-                <br>
-                <br>
-
-                <div class="collapse navbar-collapse titulos_menu" id="navcol-1">
-                    <ul class="nav navbar-nav navbar-right">
-
-                        <div class="btn-group btn-group-lg" role="group" aria-label="...">
-                            <button type="button" class="btn btn-default">Página inicial</button>
-
-                            <div class="btn-group btn-group-lg" role="group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Cadastro
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Empresas</a></li>
-                                    <li><a href="#">Entregadores</a></li>
-                                </ul>
-                            </div>
-
-                            <button type="button" class="btn btn-default btn-group-lg">Login</button>
-
-                        </div>
-                    </ul>
-                </div>
-
-            </div>
-        </header>
-    </div>
-    <!-- Fim do cabeçalho principal -->
+     </div>
+     
+    </header>
+    
+</div>
+<!-- Fim do cabeçalho principal -->
 
    <!-- <style> 
         .fundoMV {
@@ -68,11 +64,11 @@
         <div class="container">
 
             <!-- Formulário -->
-            <form class="form-inline" name="formEntregador" id="formEntregador">
+            <form class="" name="formEntregador" id="formEntregador">
             
                 <!-- Linha de título pedido -->
                 <div class="row">
-                    <h2>Perfil</h2>
+                    <h2>Meu Perfil</h2>
                     <hr/>
                     <br/>       
                 </div>
@@ -89,7 +85,7 @@
                             
                             <!-- cabeçalho painel -->
                             <div class="panel-heading">
-                                <h3 class="panel-title"><font color="black"> <strong>Dados para cadastro</strong></font></h3>
+                                <h3 class="panel-title"><font color="black"> <strong>Bem vindo Serjão Berranteiro!</strong></font></h3>
                             </div>
                             <!-- /cabeçalho painel -->
                             
@@ -104,67 +100,52 @@
 
                                 </div>
 
+                                
                                 <div class="row">
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
 
-                                        <div class="col-xs-12">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Nome</strong></span>
-                                                <input type="text" name="nome" id="nome" class="form-control" readonly="readonly">
-                                            </div>
-                                        </div>
+                                        <div class="col-xs-4">
+                                        
+                                        	<div class="row">
+                                        		
+                                        		<label for="nome">Nome</label>
+	                                                <input type="text" name="nome" id="nome" class="form-control" readonly="readonly" value="Serjão">
 
-                                    </div>
 
-                                    <div class="col-md-4">
-
-                                        <div class="col-xs-12">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Sobrenome</strong></span>
-                                                <input type="text" name="sobrenome" id="sobrenome" class="form-control" readonly="readonly">
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-4">
-
-                                        <div class="col-xs-12">
-                                            <div class="input-group inputMovEasy">
-                                                <span class="input-group-addon"><strong>CPF</strong></span>
-                                                <input type="text" name="cpf" id="cpf" class="form-control"  maxlength="11" readonly="readonly">
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="row">
-                                    <br>
-
-                                    <div class="col-md-4">
-                                        <div class="col-xs-12">
-                                            <div class="input-group inputMovEasy">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                                  <input name="telefone" id="telefone" class="form-control" placeholder="XX XXXXX-XXXX" >
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-8">
-
-                                        <div class="col-xs-12">
-
-                                            <div class="input-group inputMovEasy">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                                  <input type="email" id="email" name="email" class="form-control" placeholder="email@email.com">
+	                                            <label for="sobrenome">Sobrenome</label>
+	                                                <input type="text" name="sobrenome" id="sobrenome" class="form-control" readonly="readonly" value="Beranteiro">
+	
+                                        		
+                                        		<label for="nome">CPF</label>
+                                                	<input type="text" name="cpf" id="cpf" class="form-control"  maxlength="11" readonly="readonly" value="08358069815">
                                             </div>
                                             
                                         </div>
                                         
+                                        <div class="col-xs-4">
+                                        
+                                        	<label for="telefone">Telefone:</label>
+                                            	<input type="text" name="telefone" id="telefone" class="form-control" readonly="readonly" value="4799655255" >	
+                                            	
+                                            <label for="email">E-mail:</label>
+                                            	<input type="email" name="email" id="email" class="form-control" placeholder="email@email.com" readonly="readonly" value="entregador@email.com	">	
+                                        	
+                                       	</div>
+                                       	
+                                       	<div class="col-xs-4">
+                                		
+                                			<img src="../../imagens/serjao.jpg" class="img-thumbnail">
+                                		
+                                		</div>
+
                                     </div>
+
+                                    
+                                </div>
+
+                                <div class="row">
+
                                     
                                 </div>
                                 <!-- /Contato --> 

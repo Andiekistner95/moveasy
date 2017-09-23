@@ -1,24 +1,3 @@
-	// avaliação
-	var $star_rating = $('.star-rating .fa');
-
-	var SetRatingStar = function() {
-	  return $star_rating.each(function() {
-	    if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
-	      return $(this).removeClass('fa-star-o').addClass('fa-star');
-	    } else {
-	      return $(this).removeClass('fa-star').addClass('fa-star-o');
-	    }
-	  });
-	};
-
-	$star_rating.on('click', function() {
-	  $star_rating.siblings('input.rating-value').val($(this).data('rating'));
-	  return SetRatingStar();	
-	});
-
-	SetRatingStar();
-
-
 $( document ).ready(function() {
 
 	$("#divDashboard").show();
@@ -27,18 +6,21 @@ $( document ).ready(function() {
 
 	$( "#dashboard" ).click(function() {
 		$("#divDashboard").show();
+		$("#pedidoAssumido").show();
 		$("#divFaturas").hide();
 		$("#divAvaliacaoPendente").hide();
 	});
 
 	$( "#faturas" ).click(function() {
 		$("#divDashboard").hide();
+		$("#pedidoAssumido").hide();
 		$("#divFaturas").show();
 		$("#divAvaliacaoPendente").hide();
 	});
 
 	$( "#avaliacaoPendente" ).click(function() {
 		$("#divDashboard").hide();
+		$("#pedidoAssumido").hide();
 		$("#divFaturas").hide();
 		$("#divAvaliacaoPendente").show();
 	});
@@ -48,15 +30,15 @@ $( document ).ready(function() {
 	    chart: {
 	        type: 'pie',
 	        options3d: {
-	            enabled: false,
+	            enabled: true,
 	            alpha: 45
 	        }
 	    },
 	    title: {
-	        text: 'Resumo de pedidos - 09-2017'
+	        text: 'Resumo de avaliação - 09-2017'
 	    },
 	    subtitle: {
-	        text: 'Pedidos Abertos x Finalizados'
+	        text: 'Pontuação dos pedidos atendidos'
 	    },
 	    plotOptions: {
 	        pie: {
@@ -67,10 +49,10 @@ $( document ).ready(function() {
 	    series: [{
 	        name: 'Quantidade',
 	        data: [
-	            ['Abertos', 12],
-	            ['Fechados', 19],
-	            ['Não assumidos', 4],
-	            ['Avaliação Pendente', 4]
+	            ['4 estrelas', 37],
+	            ['3 estrelas', 2],
+	            ['5 estrelas', 42],
+	            ['2 estrelas', 3]
 	        ]
 	    }]
 	});
@@ -79,7 +61,7 @@ $( document ).ready(function() {
 	Highcharts.chart('chartHistoricoPedidosMes', {
 
 	    title: {
-	        text: 'Pedidos Emitidos Por Mês'
+	        text: 'Pedidos Atendidos Por Mês'
 	    },
 
 	    subtitle: {
@@ -104,10 +86,19 @@ $( document ).ready(function() {
 	    },
 
 	    series: [{
-	        name: 'Pedidos Emitidos',
-	        data: [14, 19, 27, 32, 21, 25, 29, 18]
+	        name: 'Pedidos Atendidos',
+	        data: [24, 19, 27, 32, 33, 45, 29, 41]
 	    }]
 
 	});
+	
+	
+	$("#confirmarEntrega").click(function() {
+		
+		$("#divEntregaAndamento").hide();
+		
+		
+	});
+		
 
 });

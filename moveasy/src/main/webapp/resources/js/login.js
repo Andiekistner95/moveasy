@@ -30,7 +30,7 @@ $( document ).ready(function() {
 					 window.location.href = "empresa/PainelEmpresa.html";
 					 break;
 				case "entregador@email.com" :
-					 window.location.href = "entregador/perfilEntregador.html";
+					 window.location.href = "entregador/PainelEntregador.html";
 					 break;
 				default:
 					alert("Usuário não encontrado!");
