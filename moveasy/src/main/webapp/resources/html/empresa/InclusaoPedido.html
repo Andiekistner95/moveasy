@@ -7,51 +7,40 @@
     <meta lang="pt">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovEasy</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="css/fixed-header.css">-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/menu.css">
 </head>
 
 <body >
 
     <div class="container">
 
-        <header style="background-color: white;">
+        <header>
+        
+        	<nav class="navbar navbar-inverse navbar-fixed-top">
+		      <div class="container">
+		        <div class="navbar-header"> 
+		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+		          <a class="navbar-brand" href="#" style="margin-bottom: 15px;"><img src="../../imagens/logoBranco.png" alt="Logo" width="120" height="75" ></a>
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		        
+		        <div class="btn-group btn-group-sm navbar-right" role="group" aria-label="..." style="margin-top: 18px;">
+		              <a href="PainelEmpresa.html" class="btn btn-default">Painel</a>
+		              <a href="" class="btn btn-default">Sair</a>
+		
+		          </div>
+		         
+		        </div><!--/.navbar-collapse -->
+		      </div>
+		    </nav>  
 
-            <div class align="left">
-                <div class="navbar-header">
-                    <a class="navbar-brand navbar-link" href="#"><img src="../imagens/logo.png" alt="Logo" width="280" height="120"></a>
-                </div>
-
-                <br>
-                <br>
-                <br>
-
-                <div class="collapse navbar-collapse titulos_menu" id="navcol-1">
-                    <ul class="nav navbar-nav navbar-right">
-
-                        <div class="btn-group btn-group-lg" role="group" aria-label="...">
-                            <button type="button" class="btn btn-default">Página inicial</button>
-
-                            <div class="btn-group btn-group-lg" role="group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Cadastro
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Empresas</a></li>
-                                    <li><a href="#">Entregadores</a></li>
-                                </ul>
-                            </div>
-
-                            <button type="button" class="btn btn-default btn-group-lg">Login</button>
-
-                        </div>
-                    </ul>
-                </div>
-
-            </div>
+            
         </header>
     </div>
     <!-- Fim do cabeçalho principal -->
@@ -65,11 +54,80 @@
 
     <div class="fundoMV">
    
-        <link rel="stylesheet" href="../css/cadastroPedido.css">
+        <link rel="stylesheet" href="../../css/cadastroPedido.css">
         <div class="container">
+        
+        	<div class="alert alert-success alert-dismissible" role="alert" id="alertaSucesso">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <strong>Pedido incluído com sucesso!</strong> Número: 45872
+			</div>
+			
+        	<div class="alert alert-danger alert-dismissible" role="alert" id="alertaErro">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <strong>Ocorreu um erro ao incluir o pedido!</strong> Verifique os dados, caso o problema persista, entre em contato com o suporte.
+			</div>
+			
+			<div class="row" id="novoPedido">
+			
+				<div class="col-md-4">
+				</div>
+				
+				<div class="col-md-4">
+					
+                        <!-- Painel de confirmação -->
+                        <div class="panel panel-info">
+                            
+                            <!-- cabeçalho painel -->
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center"><font color="black"><strong>Deseja Incluir um novo pedido?</strong></font></h3>
+                            </div>
+                            <!-- /cabeçalho painel -->
+                            
+                            <!-- Corpo painel -->
+                            <div class="panel-body" style="color:black;">
+                                
+								<div class="row">
+
+                                    <div class="col-md-3"></div>
+
+                                    <div class="col-md-3">
+
+                                        <div class="btn-group">
+                                            <button type="button" name="confirmarNovoPedido" id="confirmarNovoPedido" class="btn btn-success"><strong>Sim</strong></button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-3">
+
+                                        <div class="btn-group">
+                                            <button type="button" name="cancelarNovoPedido" id="cancelarNovoPedido" class="btn btn-danger"><strong>Não</strong></button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-3"></div>
+
+                                </div>  
+
+               
+
+                            </div>
+                            <!-- / Corpo painel -->
+
+                        </div>
+                        <!-- / Painel de confirmação -->
+					
+					
+				</div>
+				
+				<div class="col-md-4">
+				</div>
+				
+			</div>
 
             <!-- Formulário -->
-            <form class="form-inline">
+            <form class="form-inline" id="formIncluirPedido">
             
                 <!-- Linha de título pedido -->
                 <div class="row">
@@ -131,7 +189,7 @@
 
                                     <div class="input-group">
                                         <span class="input-group-addon"><strong>Descrição</strong></span>  
-                                        <textarea name="descricaoPedido" id="descricaoPedido" class="form-control" cols="70" rows="3"></textarea>
+                                        <textarea name="descricaoPedido" id="descricaoPedido" class="form-control" cols="70" rows="3" required></textarea>
                                     </div>
 
                                 </div>
@@ -142,7 +200,7 @@
 
                                     <div class="input-group">
                                         <span class="input-group-addon"><strong>Serviço</strong></span>
-                                        <select name="slTipo" id="slTipo" class="form-control" data-live-search="true">
+                                        <select name="slTipo" id="slTipo" class="form-control" data-live-search="true" required>
                                             <option value="1">Alimentício</option>
                                             <option value="2">Bancário</option>
                                             <option value="3">Geral</option>
@@ -169,14 +227,14 @@
                                         <div class="col-xs-8">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><strong>Rua</strong></span>
-                                                <input type="text" name="rua" id="rua" class="form-control" >
+                                                <input type="text" name="rua" id="rua" class="form-control" required>
                                             </div>
                                         </div>
 
                                         <div class="col-xs-4">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><strong>Numero</strong></span>
-                                                <input type="text" name="numero" id="numero" class="form-control" >
+                                                <input type="text" name="numero" id="numero" class="form-control" required>
                                             </div>
                                         </div>
 
@@ -192,14 +250,14 @@
                                         <div class="col-xs-6">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><strong>Complemento</strong></span>
-                                                <input type="text" name="complemento" id="complemento" class="form-control" >
+                                                <input type="text" name="complemento" id="complemento" class="form-control" required>
                                             </div>
                                         </div>
 
                                         <div class="col-xs-6">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><strong>Bairro</strong></span>
-                                                <input type="text" name="bairro" id="bairro" class="form-control" >
+                                                <input type="text" name="bairro" id="bairro" class="form-control" required>
                                             </div>
                                         </div>
 
@@ -217,7 +275,7 @@
 
                                             <div class="input-group">
                                                 <span class="input-group-addon"><strong>Cidade</strong></span>
-                                                <select name="slCidade" id="slCidade" class="form-control" data-live-search="true" title="Selecione...">
+                                                <select name="slCidade" id="slCidade" class="form-control" data-live-search="true" title="Selecione..." required>
                                                     <option value="1">Blumenau</option>
                                                     <option value="2">Indaial</option>
                                                     <option value="3">Gaspar</option>
@@ -229,7 +287,7 @@
                                         <div class="col-xs-6">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><strong>Estado</strong></span>
-                                                <select name="slEstado" id="slEstado" class="form-control" data-live-search="true" title="Selecione...">
+                                                <select name="slEstado" id="slEstado" class="form-control" data-live-search="true" title="Selecione..." required>
                                                     <option value="1">Santa Catarina</option>
                                                     <option value="2">Rio Grande do Sul</option>
                                                     <option value="3">Paraná</option>
@@ -255,7 +313,7 @@
                                     <div class="col-md-3">
 
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-success"><strong>Confirmar</strong></button>
+                                            <button type="button" name="confirmarPedido" id="confirmarPedido" class="btn btn-success"><strong>Confirmar</strong></button>
                                         </div>
 
                                     </div>
@@ -263,7 +321,7 @@
                                     <div class="col-md-3">
 
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-danger"><strong>Cancelar</strong></button>
+                                            <button type="button" name="cancelarPedido" id="cancelarPedido" class="btn btn-danger"><strong>Cancelar</strong></button>
                                         </div>
 
                                     </div>
@@ -290,12 +348,11 @@
 
     </div>
 
-    <script src="../js/jquery-3.2.1.slim.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/bs-animation.js"></script>
-    <script src="../js/aos.js"></script>
-    <script src="../js/InclusaoPedido.js"></script>
-    <script src="../js/bootstrap-select.min.js"></script>
+    <script src="../../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bs-animation.js"></script>
+    <script src="../../js/InclusaoPedido.js"></script>
+    <script src="../../js/bootstrap-select.min.js"></script>
 
 </body>
 

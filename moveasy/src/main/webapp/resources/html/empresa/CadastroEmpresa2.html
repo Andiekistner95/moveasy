@@ -1,3 +1,5 @@
+
+
 <!-- Começo do cabeçalho principal -->
 <!DOCTYPE html>
 <html>
@@ -7,21 +9,21 @@
     <meta lang="pt">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovEasy</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="css/fixed-header.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="../../css/menu.css">
 </head>
 
 <body >
 
     <div class="container">
 
-        <header style="background-color: white;">
-
+        <header >
+			<!-- 
             <div class align="left">
                 <div class="navbar-header">
-                    <a class="navbar-brand navbar-link" href="#"><img src="imagens/logo.png" alt="Logo" width="280" height="120"></a>
+                    <a class="navbar-brand navbar-link" href="#"><img src="../../imagens/logo.png" alt="Logo" width="280" height="120"></a>
                 </div>
 
                 <br>
@@ -32,7 +34,7 @@
                     <ul class="nav navbar-nav navbar-right">
 
                         <div class="btn-group btn-group-lg" role="group" aria-label="...">
-                            <button type="button" class="btn btn-default">Página inicial</button>
+                            <a href="/moveasy" class="btn btn-default">Página inicial</a>
 
                             <div class="btn-group btn-group-lg" role="group">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,10 +42,11 @@
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Empresas</a></li>
-                                    <li><a href="#">Entregadores</a></li>
+                                    <li><a href="CadastroEmpresa.html">Empresas</a></li>
+                                    <li><a href="CadastroEntregador.html">Entregadores</a></li>
                                 </ul>
                             </div>
+                            <a href="PainelEmpresa.html" class="btn btn-default">Painel</a>
 
                             <button type="button" class="btn btn-default btn-group-lg">Login</button>
 
@@ -52,28 +55,66 @@
                 </div>
 
             </div>
+             -->
+             
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header"> 
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="../../imagens/logoBranco.png" alt="Logo" width="100" height="60"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        
+        <div class="btn-group btn-group-sm navbar-right" role="group" aria-label="...">
+              <a href="/moveasy" class="btn btn-default">Página inicial</a>
+
+              <div class="btn-group btn-group-sm" role="group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Cadastro
+                      <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li><a href="CadastroEmpresa.html">Empresas</a></li>
+                      <li><a href="CadastroEntregador.html">Entregadores</a></li>
+                  </ul>
+              </div>
+              <a href="PainelEmpresa.html" class="btn btn-default">Painel</a>
+
+              <button type="button" class="btn btn-default btn-group-lg">Login</button>
+
+          </div>
+         
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+             
         </header>
     </div>
     <!-- Fim do cabeçalho principal -->
 
-   <!-- <style> 
+    <!--<style> 
         .fundoMV {
-            background-image: url("imagens/fundoBrancoCinza.png");
+            background-image: url("../../imagens/fundoBrancoCinza.png");
          
         }
     </style>-->
 
     <div class="fundoMV">
    
-        <link rel="stylesheet" href="css/cadastroEntregador.css">
+        <link rel="stylesheet" href="../../css/cadastroEmpresa.css">
         <div class="container">
 
             <!-- Formulário -->
-            <form class="form-inline" name="formEntregador" id="formEntregador">
+            <form class="form-inline" name="formEmpresa" id="formEmpresa">
             
                 <!-- Linha de título pedido -->
                 <div class="row">
-                    <h2>Perfil</h2>
+                    <h2>Cadastro de Empresa</h2>
                     <hr/>
                     <br/>       
                 </div>
@@ -90,7 +131,7 @@
                             
                             <!-- cabeçalho painel -->
                             <div class="panel-heading">
-                                <h3 class="panel-title"><font color="black"> <strong>Dados para cadastro</strong></font></h3>
+                                <h3 class="panel-title"><font color="black"><strong>Dados para cadastro</strong></font></h3>
                             </div>
                             <!-- /cabeçalho painel -->
                             
@@ -111,8 +152,8 @@
 
                                         <div class="col-xs-12">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><strong>Nome</strong></span>
-                                                <input type="text" name="nome" id="nome" class="form-control" readonly="readonly">
+                                                <span class="input-group-addon"><strong>Razão Social</strong></span>
+                                                <input type="text" name="razaoSocial" id="razaoSocial" class="form-control" >
                                             </div>
                                         </div>
 
@@ -122,8 +163,8 @@
 
                                         <div class="col-xs-12">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><strong>Sobrenome</strong></span>
-                                                <input type="text" name="sobrenome" id="sobrenome" class="form-control" readonly="readonly">
+                                                <span class="input-group-addon"><strong>Nome Fantasia</strong></span>
+                                                <input type="text" name="nomeFantasia" id="nomeFantasia" class="form-control" >
                                             </div>
                                         </div>
 
@@ -133,8 +174,8 @@
 
                                         <div class="col-xs-12">
                                             <div class="input-group inputMovEasy">
-                                                <span class="input-group-addon"><strong>CPF</strong></span>
-                                                <input type="text" name="cpf" id="cpf" class="form-control"  maxlength="11" readonly="readonly">
+                                                <span class="input-group-addon"><strong>CNPJ</strong></span>
+                                                <input type="text" name="cnpj" id="cnpj" class="form-control"  maxlength="14" >
                                             </div>
                                         </div>
 
@@ -288,6 +329,7 @@
                                                     <small>
 
                                                         <ul>
+                                                            <li>Informe seu nome de usuário com pelo menos <strong>08 dígitos</strong>.</li>
                                                             <li>A senha deve ser cadastrada com pelo menos <strong>08 dígitos</strong>, sendo possível utilizar caracteres especiais.</li>
                                                             <li>Lembre-se, seu usuário será responsável por solicitar as entregas para a sua empresa. Não recomendamos o uso de senhas fracas.</li>
                                                             
@@ -306,7 +348,7 @@
 
                                                 <div class="input-group inputMovEasy">
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                      <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuário" minlength="8"readonly="readonly">
+                                                      <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuário" minlength="8">
                                                 </div>
 
                                             </div>
@@ -316,16 +358,7 @@
 
                                                 <div class="input-group inputMovEasy">
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                                        <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha atual" minlength="8">
-                                                </div>
-                                            </div>
-
-                                             <div class="row">
-                                                <br>
-
-                                                <div class="input-group inputMovEasy">
-                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                                        <input type="password" name="senha" id="senha" class="form-control" placeholder="Nova senha" minlength="8">
+                                                        <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" minlength="8">
                                                 </div>
                                             </div>
 
@@ -399,14 +432,14 @@
 
     </div>
 
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bs-animation.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/bootstrap-select.min.js"></script>
-    <script src="js/jquery.maskedinput.js"></script>
+    <script src="../../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bs-animation.js"></script>
+    <script src="../../js/aos.js"></script>
+    <script src="../../js/bootstrap-select.min.js"></script>
+    <script src="../../js/jquery.maskedinput.js"></script>
 
-    <script src="js/validaCadastroEntregador.js"></script>
+    <script src="../../js/validaCadastroEmpresa.js"></script>
 
 </body>
 
