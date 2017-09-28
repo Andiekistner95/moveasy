@@ -1,3 +1,5 @@
+
+
 <!-- Começo do cabeçalho principal -->
 <!DOCTYPE html>
 <html>
@@ -7,63 +9,52 @@
     <meta lang="pt">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovEasy</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="../css/fixed-header.css">-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="../css/menu.css">
-    <link href="../css/bootstrap-imageupload.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/menu.css">
 </head>
 
-<!--<body background="imagens/fundoBrancoCinza.png" style="background-size: 130%">-->
+<body >
 
-    <div class="container"> 
+    <div class="container">
 
-        <header style="background-color: white;">
-
-            <div class="row" align="left">
-                <div class="navbar-header">
-                    <a class="navbar-brand navbar-link" href="#"><img src="../imagens/logo.png" alt="Logo" width="280" height="120"></a>
-                </div>
-
-                <br>
-                <br>
-                <br>
-
-                <div class="collapse navbar-collapse titulos_menu" id="navcol-1">
-                    <ul class="nav navbar-nav navbar-right">
-
-                        <div class="btn-group btn-group-lg" role="group" aria-label="...">
-                            <a href="/moveasy" class="btn btn-default">Página inicial</a>
-
-                            <div class="btn-group btn-group-lg" role="group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Cadastro
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="CadastroEmpresa.html">Empresas</a></li>
-                                    <li><a href="CadastroEntregador.html">Entregadores</a></li>
-                                </ul>
-                            </div>
-
-                            <button type="button" class="btn btn-default btn-group-lg">Login</button>
-
-                        </div>
-                    </ul>
-                </div>
-
-            </div>
+        <header>
+        
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+		      <div class="container">
+		        <div class="navbar-header"> 
+		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+		          <a class="navbar-brand" href="#" style="margin-bottom: 15px;"><img src="../../imagens/logoBranco.png" alt="Logo" width="120" height="75" ></a>
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		        
+		        <div class="btn-group btn-group-sm navbar-right" role="group" aria-label="..." style="margin-top: 18px;">
+		              <a href="/moveasy" class="btn btn-default">Página inicial</a>
+		              <a href="resources/html/empresa/CadastroEmpresa.html" class="btn btn-default">Cadastrar Empresa</a>
+		              <a href="resources/html/entregador/CadastroEntregador.html" class="btn btn-default">Cadastrar Entragador</a>
+		              <a href="resources/html/Login.html" class="btn btn-default">Login</a>
+		
+		          </div>
+		         
+		        </div><!--/.navbar-collapse -->
+		      </div>
+		    </nav>     
+		            
         </header>
+        
     </div>
     <!-- Fim do cabeçalho principal -->
-
     <div>
    
-        <link rel="stylesheet" href="../css/cadastroEntregador.css">
+        <link rel="stylesheet" href="../../css/cadastroEntregador.css">
         <div class="container">
 
             <!-- Formulário -->
-            <form class="form-inline" name="formEntregador" id="formEntregador">
+            <form class="" name="formEntregador" id="formEntregador">
             
                 <!-- Linha de título pedido -->
                 <div class="row">
@@ -101,35 +92,29 @@
 
                                 <div class="row">
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-sm-4">
 
                                         <div class="col-xs-12">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Nome</strong></span>
+                                            <label for="nome">Nome</label>
                                                 <input type="text" name="nome" id="nome" class="form-control" >
-                                            </div>
                                         </div>
 
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-sm-4">
 
                                         <div class="col-xs-12">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Sobrenome</strong></span>
+                                            <label for="sobrenome">Sobrenome</label>
                                                 <input type="text" name="sobrenome" id="sobrenome" class="form-control" >
-                                            </div>
                                         </div>
 
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-sm-4">
 
                                         <div class="col-xs-12">
-                                            <div class="input-group inputMovEasy">
-                                                <span class="input-group-addon"><strong>CPF</strong></span>
+                                            <label for="cpf">CPF</label>
                                                 <input type="text" name="cpf" id="cpf" class="form-control"  maxlength="11" >
-                                            </div>
                                         </div>
 
                                     </div>
@@ -139,25 +124,15 @@
                                 <div class="row">
                                     <br>
 
-                                    <div class="col-md-4">
-                                        <div class="col-xs-12">
-                                            <div class="input-group inputMovEasy">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                                  <input name="telefone" id="telefone" class="form-control" placeholder="XX XXXXX-XXXX" >
-                                            </div>
-                                        </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <label for="telefone">Telefone</label>
+                                        	<input name="telefone" id="telefone" class="form-control" placeholder="XX XXXXX-XXXX" >
                                     </div>
 
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 col-sm-8">
 
-                                        <div class="col-xs-12">
-
-                                            <div class="input-group inputMovEasy">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                                  <input type="email" id="email" name="email" class="form-control" placeholder="email@email.com">
-                                            </div>
-                                            
-                                        </div>
+                                       <label for="email">E-mail</label>
+                                         <input type="email" id="email" name="email" class="form-control" placeholder="email@email.com">
                                         
                                     </div>
                                     
@@ -176,21 +151,16 @@
                                 </div>
 
                                 <div class="row">
-
      
                                     <div class="col-md-12">
                                         <div class="col-xs-8">
-                                            <div class="input-group " style="width:80%;">
-                                                <span class="input-group-addon"><strong>Rua</strong></span>
+                                            <label for="rua">Rua</label>
                                                 <input type="text" name="rua" id="rua" class="form-control" >
-                                            </div>
                                         </div>
 
                                         <div class="col-xs-4">
-                                            <div class="input-group inputMovEasy" >
-                                                <span class="input-group-addon"><strong>Número</strong></span>
+                                            <label for="numero">Número</label>
                                                 <input type="text" name="numero" id="numero" class="form-control" >
-                                            </div>
                                         </div>
                                     </div>
 
@@ -202,17 +172,13 @@
 
                                     <div class="col-md-12">
                                         <div class="col-xs-6">
-                                            <div class="input-group inputMovEasy" >
-                                                <span class="input-group-addon"><strong>Complemento</strong></span>
+                                            <label for="complemento">Complemento</label>
                                                 <input type="text" name="complemento" id="complemento" class="form-control" >
-                                            </div>
                                         </div>
 
                                         <div class="col-xs-6">
-                                            <div class="input-group inputMovEasy">
-                                                <span class="input-group-addon"><strong>Bairro</strong></span>
+                                            <label for="bairro">Bairro</label>
                                                 <input type="text" name="bairro" id="bairro" class="form-control" >
-                                            </div>
                                         </div>
 
                                     </div>
@@ -226,27 +192,22 @@
                                     <div class="col-md-12">
 
                                         <div class="col-xs-6">
-
-                                            <div class="input-group inputMovEasy" >
-                                                <span class="input-group-addon"><strong>Cidade</strong></span>
+                                            <label for="slCidade">Cidade</label>
                                                 <select name="slCidade" id="slCidade" class="form-control" data-live-search="true" title="Selecione...">
                                                     <option value="1">Blumenau</option>
                                                     <option value="2">Indaial</option>
                                                     <option value="3">Gaspar</option>
                                                 </select>
-                                            </div>
 
                                         </div>
 
                                         <div class="col-xs-6">
-                                            <div class="input-group inputMovEasy" >
-                                                <span class="input-group-addon"><strong>Estado</strong></span>
+                                           <label for="slEstado">Estado</label>
                                                 <select name="slEstado" id="slEstado" class="form-control" data-live-search="true" title="Selecione...">
                                                     <option value="1">Santa Catarina</option>
                                                     <option value="2">Rio Grande do Sul</option>
                                                     <option value="3">Paraná</option>
                                                 </select>
-                                            </div>
                                         </div>
 
                                     </div>
@@ -299,10 +260,10 @@
                                                         <h3 class="panel-title pull-center"><strong>Foto de Perfil</strong></h3>
                                                     </div>
                                                     <div class="file-tab panel-body">
-                                                        <label class="btn btn-default btn-file">
+                                                        <label class="btn btn-primary btn-file">
                                                             <span>Pesquisar</span>
                                                             <!-- The file is stored here. -->
-                                                            <input type="file" name="image-file">
+                                                            <input type="file" name="image-file" style="display: none;">
                                                         </label>
                                                         <button type="button" class="btn btn-default">Remover</button>
                                                     </div>
@@ -417,15 +378,14 @@
 
     </div>
 
-    <script src="../js/jquery-3.2.1.slim.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/bs-animation.js"></script>
-    <script src="../js/aos.js"></script>
-    <script src="../js/bootstrap-select.min.js"></script>
-    <script src="../js/jquery.maskedinput.js"></script>
-    <script src="../js/CadastroEntregadorUpload.js"></script>
-    <script src="../js/bootstrap-imageupload.js"></script>
-    <script src="../js/validaCadastroEntregador.js"></script>
+    <script src="../../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap-select.min.js"></script>
+    <script src="../../js/jquery.maskedinput.js"></script>
+    <script src="../../js/bootstrap-imageupload.js"></script>
+    <script src="../../js/CadastroEntregadorUpload.js"></script>    
+    <script src="../../js/validaCadastroEntregador.js"></script>
+    <script src="../../js/sair.js"></script>
 
 </body>
 
