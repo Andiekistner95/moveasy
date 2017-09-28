@@ -43,7 +43,7 @@ if (typeof jQuery === 'undefined') {
 
     $.fn.imageupload.defaultOptions = {
         allowedFormats: [ 'jpg', 'jpeg', 'png', 'gif' ],
-        maxWidth: 250,
+        maxWidth: 200,
         maxHeight: 250,
         maxFileSizeKb: 2048
     };
@@ -140,7 +140,7 @@ if (typeof jQuery === 'undefined') {
     }
 
     function getImageThumbnailHtml(src) {
-        return '<div class="col-md-12"><img src="' + src + '" alt="Image preview" class="thumbnail" style="max-width: ' + options.maxWidth + 'px; max-height: ' + options.maxHeight + 'px"></div>';
+        return '<div class="col-md-12 "><img src="' + src + '" alt="Image preview" class="thumbnail center-block" style="max-width: ' + options.maxWidth + 'px; max-height: ' + options.maxHeight + 'px"></div>';
 		
     }
 
