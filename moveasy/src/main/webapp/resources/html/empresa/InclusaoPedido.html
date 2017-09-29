@@ -129,7 +129,7 @@
 			</div>
 
             <!-- Formulário -->
-            <form class="form-inline" id="formIncluirPedido">
+            <form class="" id="formIncluirPedido">
             
                 <!-- Linha de título pedido -->
                 <div class="row">
@@ -173,7 +173,7 @@
                     <!-- / Coluna de observações -->
                     
                     <!-- Coluna de pedido -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6">
                         
                         <!-- Painel de Pedido -->
                         <div class="panel panel-info">
@@ -188,10 +188,15 @@
                             <div class="panel-body" style="color:black;">
                                 
                                 <div class="row">
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><strong>Descrição</strong></span>  
-                                        <textarea name="descricaoPedido" id="descricaoPedido" class="form-control" cols="70" rows="3" required></textarea>
+									
+									<div class="col-md-12 col-sm-12">
+									
+                                    	<div class="col-xs-12">	
+                                    	
+	                                        <label for="descricaoPedido">Descrição</label>  
+	                                        	<textarea name="descricaoPedido" id="descricaoPedido" class="form-control" cols="70" rows="3" required></textarea>
+	                                        	
+	                                    </div>
                                     </div>
 
                                 </div>
@@ -200,13 +205,15 @@
 
                                     <br>
 
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><strong>Serviço</strong></span>
-                                        <select name="slTipo" id="slTipo" class="form-control" data-live-search="true" required>
-                                            <option value="1">Alimentício</option>
-                                            <option value="2">Bancário</option>
-                                            <option value="3">Geral</option>
-                                        </select>
+                                    <div class="col-md-12 col-sm-12">
+                                    	<div class="col-xs-12">
+	                                        <label for="slTipo">Tipo de Serviço</label>
+		                                        <select name="slTipo" id="slTipo" class="form-control" data-live-search="true" required>
+		                                            <option value="1">Alimentício</option>
+		                                            <option value="2">Bancário</option>
+		                                            <option value="3">Geral</option>
+		                                        </select>
+		                                 </div>
                                     </div>            
 
                                 </div>
@@ -226,44 +233,42 @@
 
                                     <div class="col-md-12">       
 
-                                        <div class="col-xs-8">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Rua</strong></span>
+                                        <div class="col-xs-12">
+                                            <label for="rua">Rua</label>
                                                 <input type="text" name="rua" id="rua" class="form-control" required>
-                                            </div>
+                                            
                                         </div>
-
-                                        <div class="col-xs-4">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Numero</strong></span>
+                                    </div>
+                                    
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="col-xs-12">
+                                            <label for="rua">Número</label>
                                                 <input type="text" name="numero" id="numero" class="form-control" required>
-                                            </div>
+                                            
                                         </div>
-
+                                        
                                     </div>
-
+      
                                 </div>
+      
 
                                 <div class="row">
 
                                     <br>
 
-                                    <div class="col-md-12">
-                                        <div class="col-xs-6">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Complemento</strong></span>
+                                    <div class="col-md-6">
+                                        <div class="col-xs-12">
+                                            <label for="complemento">Complemento</label>
                                                 <input type="text" name="complemento" id="complemento" class="form-control" required>
-                                            </div>
                                         </div>
-
-                                        <div class="col-xs-6">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Bairro</strong></span>
-                                                <input type="text" name="bairro" id="bairro" class="form-control" required>
-                                            </div>
-                                        </div>
-
                                     </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="col-xs-12">
+                                            <label for="bairro">Bairro</label>
+                                                <input type="text" name="bairro" id="bairro" class="form-control" required>
+                                        </div>
+                                    </div>                                    
 
                                 </div>
 
@@ -271,36 +276,37 @@
 
                                     <br>
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 col-sm-12">
 
-                                        <div class="col-xs-6">
-
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Cidade</strong></span>
-                                                <select name="slCidade" id="slCidade" class="form-control" data-live-search="true" title="Selecione..." required>
-                                                    <option value="1">Blumenau</option>
-                                                    <option value="2">Indaial</option>
-                                                    <option value="3">Gaspar</option>
-                                                </select>
-                                            </div>
+                                        <div class="col-xs-12">
+	
+	                                        <label for="slCidade">Cidade</label>
+		                                         <select name="slCidade" id="slCidade" class="form-control" data-live-search="true" title="Selecione..." required>
+		                                             <option value="1">Blumenau</option>
+		                                             <option value="2">Indaial</option>
+		                                             <option value="3">Gaspar</option>
+		                                         </select>
 
                                         </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12 col-sm-12">
 
-                                        <div class="col-xs-6">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><strong>Estado</strong></span>
+                                        <div class="col-xs-12">
+                                           <label for="slEstado">Estado</label>
                                                 <select name="slEstado" id="slEstado" class="form-control" data-live-search="true" title="Selecione..." required>
                                                     <option value="1">Santa Catarina</option>
                                                     <option value="2">Rio Grande do Sul</option>
                                                     <option value="3">Paraná</option>
                                                 </select>
-                                            </div>
+    
                                         </div>
 
                                     </div>
-
+                                    
                                 </div>
-                                <!-- / Dados de endreço entrega  -->
+
+                             <!-- / Dados de endreço entrega  -->
 
                             </div>
                             <!-- / Corpo painel -->
@@ -310,26 +316,17 @@
 
                                 <div class="row">
 
-                                    <div class="col-md-3"></div>
+                                    <div class="col-md-4"></div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-4 text-center">
 
-                                        <div class="btn-group">
-                                            <button type="button" name="confirmarPedido" id="confirmarPedido" class="btn btn-success"><strong>Confirmar</strong></button>
-                                        </div>
-
+	                                    <button type="button" class="btn btn-success"><strong>Confirmar</strong></button>
+	                                    <button type="button" class="btn btn-danger"><strong>Cancelar</strong></button>
+    
                                     </div>
 
-                                    <div class="col-md-3">
-
-                                        <div class="btn-group">
-                                            <button type="button" name="cancelarPedido" id="cancelarPedido" class="btn btn-danger"><strong>Cancelar</strong></button>
-                                        </div>
-
+                                    <div class="col-md-4">
                                     </div>
-
-                                    <div class="col-md-3"></div>
-
                                 </div>  
 
                             </div>
