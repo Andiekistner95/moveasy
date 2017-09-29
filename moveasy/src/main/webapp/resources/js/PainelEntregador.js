@@ -86,7 +86,7 @@ $( document ).ready(function() {
 	    },
 
 	    series: [{
-	        name: 'Pedidos Atendidos',
+	        name: 'Atendidos',
 	        data: [24, 19, 27, 32, 33, 45, 29, 41]
 	    }]
 

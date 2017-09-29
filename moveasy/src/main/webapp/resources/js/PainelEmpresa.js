@@ -104,7 +104,7 @@ $( document ).ready(function() {
 	    },
 
 	    series: [{
-	        name: 'Pedidos Emitidos',
+	        name: 'Emitidos',
 	        data: [14, 19, 27, 32, 21, 25, 29, 18]
 	    }]
 
