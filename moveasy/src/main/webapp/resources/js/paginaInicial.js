@@ -3,8 +3,9 @@ $( document ).ready(function() {
 
 	$("#divTmbEmpresas").show();
 	$("#divTmbEntregadores").hide();
-
-	$("#divTmbServicosDiversos").show();
+	
+	$("#divTmbServicosAlimenticios").show();
+	$("#divTmbServicosDiversos").hide();
 	$("#divTmbServicosBancarios").hide();
 
 
@@ -27,6 +28,7 @@ $( document ).ready(function() {
 		$("#btnServicosBancarios").removeClass("active");
 		$("#btnServicosDiversos").addClass("active");
 		$("#divTmbServicosBancarios").hide();
+		$("#divTmbServicosAlimenticios").hide();
 		$("#divTmbServicosDiversos").show();
 	});
 
@@ -34,6 +36,7 @@ $( document ).ready(function() {
 		$("#btnServicosAlimenticios").removeClass("active");
 		$("#btnServicosDiversos").removeClass("active");
 		$("#btnServicosBancarios").addClass("active");
+		$("#divTmbServicosAlimenticios").hide();
 		$("#divTmbServicosDiversos").hide();
 		$("#divTmbServicosBancarios").show();
 	});
@@ -42,8 +45,9 @@ $( document ).ready(function() {
 		$("#btnServicosBancarios").removeClass("active");
 		$("#btnServicosDiversos").removeClass("active");
 		$("#btnServicosAlimenticios").addClass("active");
+		$("#divTmbServicosAlimenticios").show();
 		$("#divTmbServicosDiversos").hide();
-		$("#divTmbServicosBancarios").show();
+		$("#divTmbServicosBancarios").hide();
 	});
 
 
